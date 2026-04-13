@@ -194,6 +194,88 @@ const CK=[
 {c:"Section B",i:["EMH essay","NPV vs IRR vs Payback","CAPM + limitations","MM propositions","Trade-off theory","Dividend theories","Derivatives & hedging","FX risk & strategies","WCM policies"]}
 ];
 
+// ══════════ STEP-BY-STEP PROCESSES ══════════
+const STEPS={
+1:[
+{s:"Step 1: Identify the cash flows",d:"Read the question and list every cash flow. Ask three questions for each: (1) HOW MUCH in \u00a3? (2) WHEN does it happen \u2014 Year 0, 1, 2, 3...? (3) Which DIRECTION \u2014 money IN (positive) or OUT (negative)? Year 0 is always the initial investment (negative). Remaining years are revenues (positive). If there\u2019s a scrap/residual value in the final year, add it to that year\u2019s CF."},
+{s:"Step 2: Identify the discount rate",d:"Find the rate in the question. It might be called \u2018cost of capital\u2019, \u2018required return\u2019, \u2018discount rate\u2019, or \u2018WACC\u2019. Convert to decimal (e.g., 12% = 0.12)."},
+{s:"Step 3: Calculate the discount factor for each year",d:"DF = 1/(1+r)^n. Year 0: DF=1. Year 1: 1/(1+r). Year 2: 1/(1+r)\u00b2. And so on. Write each DF to 4 decimal places."},
+{s:"Step 4: Calculate the present value of each CF",d:"For each year: PV = CF \u00d7 DF. Multiply the cash flow by its discount factor."},
+{s:"Step 5: Sum all present values",d:"Add up every PV (including the negative Year 0). This total is the NPV."},
+{s:"Step 6: State the decision",d:"Write: \u2018Since NPV = \u00a3X > 0, the project should be accepted as it creates value above the required return.\u2019 If NPV < 0: \u2018...should be rejected.\u2019"}
+],
+2:[
+{s:"Step 1: Calculate NPV at two different rates",d:"You need two full NPV calculations. Pick (or use given) rates where one gives a POSITIVE NPV and one gives a NEGATIVE NPV. Show the complete NPV table for each."},
+{s:"Step 2: Write down the interpolation formula",d:"IRR = r\u208a + [NPV\u208a / (NPV\u208a \u2212 NPV\u208b)] \u00d7 (r\u208b \u2212 r\u208a). Where r\u208a is the rate giving positive NPV, r\u208b the rate giving negative NPV."},
+{s:"Step 3: Plug in and solve",d:"Insert your two rates and two NPVs. Work through the arithmetic step by step. Show the division, the multiplication, then the addition."},
+{s:"Step 4: State the decision",d:"Compare IRR to the cost of capital (k). Write: \u2018Since IRR (X%) > cost of capital (k%), the project should be accepted.\u2019"},
+{s:"For AER: One-step process",d:"Identify the nominal rate (r) and compounding frequency (m). Monthly=12, quarterly=4, semi-annual=2, daily=365. Apply: AER = (1 + r/m)^m \u2212 1."}
+],
+3:[
+{s:"Step 1: Identify what you\u2019re valuing",d:"Is it a share (dividends), a firm (earnings/CF), or an asset? This determines which perpetuity formula to use."},
+{s:"Step 2: Find the NEXT period\u2019s cash flow (CF\u2081 or d\u2081)",d:"CRITICAL: If the question says \u2018the firm just paid\u2019 or \u2018current dividend\u2019, that\u2019s d\u2080 (this year). You need d\u2081 = d\u2080 \u00d7 (1+g). If the question says \u2018expected dividend next year\u2019, that IS d\u2081."},
+{s:"Step 3: Identify r (required return) and g (growth rate)",d:"r might be called \u2018cost of equity\u2019, \u2018required return\u2019, or \u2018discount rate\u2019. g is the constant growth rate. Check that g < r (otherwise the formula doesn\u2019t work)."},
+{s:"Step 4: Apply the formula",d:"Flat (no growth): P = CF/r. Growing: P = CF\u2081/(r\u2212g). For P/E: P/E = 1/(r\u2212g)."},
+{s:"Step 5: Verify",d:"Does the price seem reasonable? If g is close to r, the price will be very high. If g=0, the price should be lower."}
+],
+4:[
+{s:"Step 1: Identify the bond\u2019s characteristics",d:"From the question, extract: Face Value (FV, usually \u00a31,000), Coupon Rate (%), Maturity (years), Payment Frequency (annual or semi-annual), and YTM (the discount rate)."},
+{s:"Step 2: Calculate the coupon payment in \u00a3",d:"C = Coupon Rate \u00d7 Face Value. E.g., 6% \u00d7 \u00a31,000 = \u00a360 per year. If semi-annual: \u00a360/2 = \u00a330 every 6 months."},
+{s:"Step 3: Map out the cash flows",d:"Years 1 to n\u22121: You receive the coupon (e.g., \u00a360). Year n (final): You receive the coupon PLUS the face value (e.g., \u00a360 + \u00a31,000 = \u00a31,060)."},
+{s:"Step 4: Choose your method",d:"Method A (Individual): Discount each year\u2019s CF separately using DF = 1/(1+YTM)^t, then sum. Method B (Annuity): Price = C \u00d7 AF + FV \u00d7 DF. AF = [1\u22121/(1+y)^n]/y. Both give the same answer."},
+{s:"Step 5: Calculate and check",d:"Compute the price. Then sanity-check: Coupon > YTM \u2192 price must be ABOVE face value (premium). Coupon < YTM \u2192 price must be BELOW (discount). Coupon = YTM \u2192 price = face value exactly (par)."},
+{s:"Step 6: State your finding",d:"Write: \u2018The bond trades at a [premium/discount/par] of \u00a3X because the coupon rate (Y%) is [above/below/equal to] the YTM (Z%).\u2019"}
+],
+5:[
+{s:"Step 1: List all possible outcomes",d:"From the question, create a table: Outcome (e.g., Boom/Normal/Recession) | Probability (P) | Return (R). Probabilities must sum to 1.0."},
+{s:"Step 2: Calculate Expected Return E(R)",d:"E(R) = \u03a3 R\u1d62 \u00d7 P\u1d62. Multiply each return by its probability and sum everything."},
+{s:"Step 3: Calculate deviations from the mean",d:"For each outcome: (R\u1d62 \u2212 E(R)). This shows how far each outcome is from the average."},
+{s:"Step 4: Square each deviation",d:"(R\u1d62 \u2212 E(R))\u00b2. Squaring makes all values positive and penalises large deviations more."},
+{s:"Step 5: Probability-weight and sum = Variance",d:"\u03c3\u00b2 = \u03a3 P\u1d62 \u00d7 (R\u1d62 \u2212 E(R))\u00b2. Multiply each squared deviation by its probability, then add them all up."},
+{s:"Step 6: Square root = Standard Deviation",d:"\u03c3 = \u221a\u03c3\u00b2. This is the risk measure, now in the same units (%) as the return."},
+{s:"For portfolios: Additional steps",d:"Portfolio return = w\u2081E(R\u2081) + w\u2082E(R\u2082) (weighted average). Portfolio variance = w\u2081\u00b2\u03c3\u2081\u00b2 + w\u2082\u00b2\u03c3\u2082\u00b2 + 2w\u2081w\u2082\u03c3\u2081\u03c3\u2082\u03c1. If \u03c1=0, the last term vanishes. Compare portfolio \u03c3 to the weighted average of individual \u03c3s to show the diversification benefit."}
+],
+6:[
+{s:"Step 1: Do you need to calculate Beta, or is it given?",d:"If beta is given (e.g., \u03b2=1.4), skip to Step 5. If you have return data for the stock and the market, continue to Step 2."},
+{s:"Step 2: Calculate mean returns",d:"Find the average return for the stock and for the market index separately."},
+{s:"Step 3: Calculate Covariance",d:"For each period: (Stock return \u2212 Stock mean) \u00d7 (Market return \u2212 Market mean) \u00d7 Probability. Sum all of these = Covariance."},
+{s:"Step 4: Calculate Market Variance",d:"For each period: (Market return \u2212 Market mean)\u00b2 \u00d7 Probability. Sum = Var(Rm). Note: this is the same process as variance from L5, but for the market only."},
+{s:"Step 5: Calculate Beta",d:"\u03b2 = Covariance / Market Variance. Interpret: \u03b2>1 means more volatile than market, \u03b2<1 means less."},
+{s:"Step 6: Apply the SML/CAPM",d:"E(R\u1d62) = Rf + \u03b2(Rm \u2212 Rf). Plug in the risk-free rate, beta, and market return. This gives the expected (fair) return."},
+{s:"Step 7: Valuation judgement (if asked)",d:"If the stock\u2019s actual return > CAPM return \u2192 it\u2019s above the SML \u2192 undervalued (buy). If actual < CAPM \u2192 below SML \u2192 overvalued (sell)."}
+],
+7:[
+{s:"Options \u2014 Step 1: Identify the contract",d:"What type? Call (right to BUY) or Put (right to SELL). Find: Exercise price (E), Premium paid, Spot price at maturity (S)."},
+{s:"Options \u2014 Step 2: Exercise decision",d:"Call: Exercise if S > E (you\u2019re buying cheap). Put: Exercise if E > S (you\u2019re selling dear). Otherwise, let it expire."},
+{s:"Options \u2014 Step 3: Calculate profit",d:"Call: Profit = max(S\u2212E, 0) \u2212 Premium. Put: Profit = max(E\u2212S, 0) \u2212 Premium. Note: even if payoff is positive but less than premium, you still exercise (to recover some cost)."},
+{s:"Futures \u2014 Step 1: Set up the table",d:"Columns: Day | Price | Daily P&L | Margin Balance | Margin Call? Start Day 1 with the entry price and initial margin."},
+{s:"Futures \u2014 Step 2: Daily mark-to-market",d:"Each day: P&L = (Today\u2019s price \u2212 Yesterday\u2019s price) \u00d7 Number of contracts. Add P&L to previous balance."},
+{s:"Futures \u2014 Step 3: Check for margin calls",d:"If balance falls BELOW maintenance margin \u2192 margin call. Deposit enough to bring balance back up to INITIAL margin (not maintenance). Record the deposit."},
+{s:"Futures \u2014 Step 4: Final P&L",d:"Net P&L = (Final price \u2212 Entry price) \u00d7 Contracts. Note total cash deposited (initial + any top-ups)."}
+],
+8:[
+{s:"Step 1: Find the cost of EACH capital source",d:"Debt: Kd = YTM or interest rate from the question. Then adjust for tax: Kdt = Kd \u00d7 (1\u2212T). Preference shares: Kps = Annual dividend / Current market price. Ordinary shares: Choose DGM [Kos = D\u2081/P\u2080 + g] or CAPM [Kos = Rf + \u03b2(Rm\u2212Rf)], depending on what data the question gives you."},
+{s:"Step 2: Find the MARKET VALUE of each source",d:"The question should give market values (not book values). If it gives total shares \u00d7 price, multiply them out. Debt: market value of bonds. Total: V = D + PS + OS."},
+{s:"Step 3: Calculate the weights",d:"Wd = D/V, Wps = PS/V, Wos = OS/V. These must sum to 1.0."},
+{s:"Step 4: Apply the WACC formula",d:"WACC = Kdt \u00d7 Wd + Kps \u00d7 Wps + Kos \u00d7 Wos. Show each term separately, then sum."},
+{s:"Step 5: Interpret",d:"Write: \u2018The WACC is X%. The firm should only accept projects earning at least X% (IRR \u2265 X% or NPV \u2265 0 when discounted at X%).\u2019"}
+],
+9:[
+{s:"Step 1: Identify the scenario",d:"The question will give you: Earnings per share, ROE (Return on Equity), Ke (cost of equity / required return), and a payout ratio (or retention ratio = 1 \u2212 payout)."},
+{s:"Step 2: Calculate for Scenario A (e.g., 100% payout)",d:"Dividend = all earnings. Growth g = 0 (nothing retained). Price = Div / Ke. This is a flat perpetuity."},
+{s:"Step 3: Calculate for Scenario B (e.g., partial payout)",d:"Dividend = Earnings \u00d7 Payout ratio. Growth g = Retention ratio \u00d7 ROE. Price = D\u2081 / (Ke \u2212 g)."},
+{s:"Step 4: Compare and conclude",d:"If ROE = Ke, both prices should be EQUAL (this proves MM irrelevance). If ROE > Ke, lower payout gives higher price. If ROE < Ke, higher payout gives higher price."}
+],
+10:[
+{s:"Step 1: Extract numbers from the financial statements",d:"From the Balance Sheet: Inventory, Accounts Receivable (trade debtors), Accounts Payable (trade creditors). From the Income Statement: Revenue (sales) and COGS (cost of goods sold). These are the raw inputs."},
+{s:"Step 2: Calculate each component",d:"DIO = (Inventory \u00f7 COGS) \u00d7 365. DSO = (Receivables \u00f7 Revenue) \u00d7 365. DPO = (Payables \u00f7 COGS) \u00d7 365. Note: DIO and DPO use COGS, but DSO uses Revenue."},
+{s:"Step 3: Combine into cycles",d:"Operating Cycle = DIO + DSO (how long from buying materials to collecting cash). Cash Conversion Cycle = DIO + DSO \u2212 DPO (how long your cash is tied up after subtracting how long suppliers wait)."},
+{s:"Step 4: Interpret the CCC",d:"Positive CCC: You pay suppliers X days BEFORE customers pay you \u2014 you need financing for the gap. Negative CCC: You collect from customers BEFORE paying suppliers (rare, mostly retailers). Lower CCC = more efficient."},
+{s:"For EOQ:",d:"Identify: D (annual demand in units), S (cost per order in \u00a3), H (holding cost per unit per year in \u00a3). Apply: EOQ = \u221a(2DS/H). Verify: at EOQ, total ordering cost should equal total holding cost."},
+{s:"For Trade Credit Cost:",d:"Identify the terms (e.g., 3/10 net 40). d = discount (0.03), disc = discount period (10 days), full = full payment period (40 days). Apply: Cost = [d/(1\u2212d)]^(365/(full\u2212disc)) \u2212 1. Compare to bank borrowing rate."}
+]
+};
+
 // ══════════ STATE ══════════
 let V='ov',LI=null,FF='all',CKS={};
 try{CKS=JSON.parse(localStorage.getItem('c31fc')||'{}')}catch(e){}
@@ -245,6 +327,7 @@ function mkPQ(q,a,col){
 
 function rLEC(){
   const l=L.find(x=>x.id===LI); if(!l)return '';
+  const steps=STEPS[l.id]||[];
   return `<button class="back" onclick="go('ov')">\u2190 Back</button>
   <div class="banner" style="background:linear-gradient(135deg,${l.co},${l.co}99)"><div class="tg">LECTURE ${l.id} &middot; ${l.ch.toUpperCase()}</div><h1>${l.i} ${l.t}</h1></div>
   <h2 class="sec">\ud83d\udccc Key Concepts</h2>
@@ -253,6 +336,9 @@ function rLEC(){
   <div class="fgrid">${l.fm.map(f=>`<div class="fc"><div class="fc-n">${f.n}</div><div class="fc-eq">${f.eq}</div>${f.c?`<div class="fc-c">${f.c}</div>`:''}</div>`).join('')}</div>
   <h2 class="sec">\ud83d\udd0d Deep Dive</h2>
   <div class="ctx">${l.dd}</div>
+  <h2 class="sec">\ud83d\udea6 Step-by-Step Process (start to finish)</h2>
+  <p style="color:#888;font-size:13px;margin-bottom:12px">Follow these steps in order when you see this topic on the exam. Click each step for detail.</p>
+  ${steps.map((st,i)=>mkExp(st.s,l.co,`<p>${st.d}</p>`,false)).join('')}
   <h2 class="sec">\ud83e\udde0 Ways of Thinking &mdash; click to expand</h2>
   ${l.tf.map(t=>mkExp(t.h,l.co,`<p>${t.b}</p>`,false)).join('')}
   <h2 class="sec">\ud83d\udcdd Practice Questions &mdash; click to reveal</h2>
@@ -271,6 +357,51 @@ function rFM(){
 function rSA(){
   const pc={Core:'b-c',Medium:'b-m',Easy:'b-e'};
   return `<div class="hero"><h1>Section A &mdash; Calculations</h1><p>3 questions, answer ALL. Show every step of your working. Always state the decision rule at the end.</p></div>
+
+  ${mkExp('\ud83d\udcb5 Understanding Cash Flows &mdash; the foundation of everything','#60a5fa',`
+<p style="margin-bottom:12px"><strong>What is a cash flow?</strong> It\u2019s real money moving in or out. Not accounting profit, not depreciation, not accruals \u2014 actual pounds you could deposit in a bank. If it\u2019s not real money, it\u2019s not a cash flow.</p>
+
+<p style="margin:16px 0 8px"><strong style="color:#60a5fa;font-size:14px">In NPV / IRR questions (Lectures 1\u20132)</strong></p>
+<p>The exam usually gives you cash flows directly. Look for these clues:</p>
+<ul>
+<li><strong>Year 0 \u2014 the investment:</strong> Words like \u201cinitial investment\u201d, \u201cupfront cost\u201d, \u201ccapital expenditure\u201d, \u201ccosts \u00a3X\u201d. This is always NEGATIVE (money going out).</li>
+<li><strong>Years 1, 2, 3... \u2014 the returns:</strong> Words like \u201cexpected to generate\u201d, \u201cnet revenue\u201d, \u201cannual cash flow\u201d, \u201creturns \u00a3X per year\u201d. These are POSITIVE (money coming in).</li>
+<li><strong>Final year extras:</strong> Look for \u201cscrap value\u201d, \u201cresidual value\u201d, \u201csold for \u00a3X at the end\u201d. Add this to the final year\u2019s CF.</li>
+</ul>
+
+<p style="margin:16px 0 8px"><strong style="color:#f87171">The tricky version: when they give you accounting data</strong></p>
+<p>Sometimes you get profit data instead of cash flows. Key adjustments:</p>
+<ul>
+<li><strong>Add back depreciation:</strong> Depreciation is an accounting charge, NOT a real cash outflow. The machine was paid for at Year 0. If given \u201cprofit after depreciation\u201d, add depreciation back to get CF.</li>
+<li><strong>Ignore sunk costs:</strong> \u201cThe firm has already spent \u00a330,000 on a feasibility study\u201d \u2014 irrelevant. It\u2019s spent regardless of whether you do the project.</li>
+<li><strong>Include opportunity costs:</strong> If the project uses a building the firm could rent out for \u00a310,000/year, that\u2019s a real cost even though no money changes hands.</li>
+</ul>
+
+<p style="margin:16px 0 8px"><strong style="color:#60a5fa;font-size:14px">In Bond Pricing (Lecture 4)</strong></p>
+<p>Bond CFs are the easiest \u2014 they\u2019re contractually defined:</p>
+<ul>
+<li><strong>Years 1 to n\u22121:</strong> Coupon = Coupon Rate \u00d7 Face Value. E.g. 6% \u00d7 \u00a31,000 = \u00a360. Same every year.</li>
+<li><strong>Year n (final):</strong> Coupon + Face Value. E.g. \u00a360 + \u00a31,000 = \u00a31,060.</li>
+<li>If semi-annual: halve the coupon, double the periods.</li>
+</ul>
+
+<p style="margin:16px 0 8px"><strong style="color:#60a5fa;font-size:14px">In Share Valuation (Lecture 3)</strong></p>
+<p>The \u201ccash flow\u201d for shares is the dividend stream:</p>
+<ul>
+<li><strong>Flat perpetuity:</strong> Same dividend forever \u2192 P = d/r. No need to list individual CFs.</li>
+<li><strong>Growing perpetuity:</strong> Dividend grows at g% \u2192 P = d\u2081/(r\u2212g). You need d\u2081 (NEXT year\u2019s dividend), not d\u2080 (this year\u2019s).</li>
+</ul>
+
+<p style="margin:16px 0 8px"><strong style="color:#60a5fa;font-size:14px">In Working Capital (Lecture 10)</strong></p>
+<p>Here \u201ccash flow\u201d = the daily operating cycle:</p>
+<ul>
+<li>Cash OUT: when you pay suppliers (captured by DPO)</li>
+<li>Cash IN: when customers pay you (captured by DSO)</li>
+<li>CCC tells you how many days cash is trapped between out and in.</li>
+</ul>
+
+<p style="margin:16px 0 8px;padding:12px 16px;background:#1a2e4a;border-radius:8px"><strong style="color:#60a5fa">\ud83c\udfaf The universal rule:</strong> For EVERY cash flow, answer three questions: (1) How much? (2) When? (3) In or out? Once you have those answers, you can set up any table and start discounting.</p>
+`,false)}
 
   ${mkExp('\ud83c\udfaf How to lay out your answer on paper','#f87171',`
 <p style="margin-bottom:12px">For most Section A questions (NPV, IRR, bond pricing), the marker expects you to <strong>draw a table</strong>. Here is what each column means:</p>

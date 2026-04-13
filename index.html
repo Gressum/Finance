@@ -6,673 +6,300 @@
 <title>C31FC Finance — Exam Revision Hub</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:#0c0e14;color:#d8dae0;line-height:1.6;overflow-x:hidden}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#2a2d38;border-radius:3px}a{color:#60a5fa;text-decoration:none}.nav{position:sticky;top:0;z-index:200;background:rgba(12,14,20,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1a1d26;display:flex;align-items:center;padding:0 20px;height:52px;gap:12px}.nav-brand{font-family:'Fraunces',serif;font-weight:800;font-size:18px;color:#f0f0f0;white-space:nowrap;margin-right:8px}.nav-scroll{display:flex;gap:3px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1}.nav-scroll::-webkit-scrollbar{display:none}.nav-tab{padding:6px 14px;border-radius:7px;border:none;background:transparent;color:#666;font:500 13px/1 'DM Sans',sans-serif;cursor:pointer;transition:.2s;white-space:nowrap}.nav-tab:hover{background:#161820;color:#aaa}.nav-tab.active{background:#1a1f2e;color:#60a5fa}.container{max-width:1080px;margin:0 auto;padding:20px 20px 60px}.hero{text-align:center;padding:40px 0 24px}.hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,38px);font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px}.hero p{color:#666;font-size:14px;max-width:560px;margin:0 auto}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-top:20px}.card{background:#13151c;border:1px solid #1c1f28;border-radius:14px;padding:18px 20px;cursor:pointer;transition:.25s;position:relative;overflow:hidden}.card:hover{border-color:#2a2e3a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}.card-bar{position:absolute;top:0;left:0;right:0;height:3px}.card-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}.card-ico{font-size:22px;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#181b24;flex-shrink:0}.card-lbl{font-size:11px;color:#555;font-family:'JetBrains Mono',monospace}.card-ttl{font-weight:600;font-size:14px;color:#e0e0e0}.card-desc{font-size:12.5px;color:#777;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.sec-title{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid #1a1d26}.back-btn{display:inline-flex;align-items:center;gap:5px;color:#60a5fa;font:500 13px/1 'DM Sans',sans-serif;cursor:pointer;margin-bottom:14px;padding:7px 14px;border-radius:8px;background:#151820;border:1px solid #1c1f28}.back-btn:hover{background:#1a1d26}.detail-banner{padding:28px 32px;border-radius:16px;margin-bottom:20px}.detail-banner .tag{font-size:11px;color:rgba(255,255,255,.55);font-family:'JetBrains Mono',monospace;margin-bottom:2px}.detail-banner h1{font-family:'Fraunces',serif;font-size:clamp(22px,4vw,30px);font-weight:800;color:#fff}.kp-list{list-style:none;padding:0}.kp-list li{padding:10px 16px;margin-bottom:5px;background:#13151c;border-radius:8px;border-left:3px solid;font-size:13.5px}.f-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;margin:10px 0 20px}.f-card{background:#151820;border:1px solid #1e2130;border-radius:10px;padding:13px 16px}.f-label{font-size:11px;color:#777;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}.f-eq{font-family:'JetBrains Mono',monospace;font-size:15px;color:#60a5fa;font-weight:500}.f-ctx{font-size:12px;color:#555;margin-top:6px;font-style:italic}.tip{background:#151820;border:1px solid #1e2130;border-radius:12px;padding:16px 20px;margin:10px 0 20px}.tip h4{font-size:13px;margin-bottom:6px;font-weight:600}.tip.calc h4{color:#f59e0b}.tip.essay h4{color:#a78bfa}.tip.warn h4{color:#f87171}.tip.info h4{color:#34d399}.tip.think h4{color:#60a5fa}.tip p,.tip ul{font-size:13.5px;color:#999;line-height:1.7}.tip ul{padding-left:18px;margin-top:4px}.tip li{margin-bottom:3px}.context{background:#111318;border:1px solid #1a1d26;border-radius:12px;padding:18px 22px;margin:10px 0 20px}.context p{font-size:13.5px;color:#888;margin-bottom:8px}.context p:last-child{margin-bottom:0}.tbl{width:100%;border-collapse:collapse;margin:10px 0 20px;font-size:13px}.tbl th{text-align:left;padding:10px 14px;background:#13151c;color:#777;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.4px;border-bottom:1px solid #1a1d26}.tbl td{padding:10px 14px;border-bottom:1px solid #151820;color:#bbb}.tbl tr:hover td{background:#13151c}.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}.b-core{background:#1a2e4a;color:#60a5fa}.b-medium{background:#352a10;color:#f59e0b}.b-easy{background:#132e22;color:#34d399}.essay{background:#13151c;border:1px solid #1c1f28;border-radius:14px;margin-bottom:14px;overflow:hidden}.essay-head{padding:16px 20px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:.15s}.essay-head:hover{background:#161820}.essay-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}.essay-title{font-weight:600;font-size:14px;flex:1}.essay-lec{font-size:12px;color:#555;font-family:'JetBrains Mono',monospace}.essay-chevron{color:#444;font-size:13px;transition:.2s}.essay.open .essay-chevron{transform:rotate(180deg)}.essay-body{padding:0 20px 18px;display:none}.essay.open .essay-body{display:block}.essay-body li{padding:5px 0;font-size:13px;color:#999;line-height:1.6;padding-left:18px;position:relative;list-style:none}.essay-body li::before{content:'\2192';position:absolute;left:0;color:#555}.fw-filters{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:14px}.fw-btn{padding:6px 13px;border-radius:7px;border:1px solid #1e2130;background:#13151c;color:#888;font:500 12px/1 'DM Sans',sans-serif;cursor:pointer;transition:.2s}.fw-btn:hover{border-color:#333;color:#ccc}.fw-btn.on{background:#1a2e4a;border-color:#2563eb;color:#60a5fa}.fw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}.fw-card{background:#13151c;border:1px solid #1c1f28;border-radius:10px;padding:14px 16px;cursor:pointer;transition:.2s}.fw-card:hover{border-color:#2a2e3a}.fw-chap{font-size:10px;color:#555;font-family:'JetBrains Mono',monospace;margin-bottom:2px}.fw-ctx{font-size:11px;color:#666;margin-bottom:4px;font-style:italic}.fw-name{font-size:12px;color:#999;font-weight:600;margin-bottom:4px}.fw-eq{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500}.cl-item{padding:10px 14px;margin-bottom:4px;background:#13151c;border-radius:8px;display:flex;align-items:flex-start;gap:10px;font-size:13px;cursor:pointer;transition:.15s;user-select:none}.cl-item:hover{background:#161820}.cl-box{width:18px;height:18px;border-radius:4px;border:2px solid #333;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:.15s;font-size:11px;color:#fff}.cl-box.done{background:#2563eb;border-color:#2563eb}.cl-txt{color:#bbb;line-height:1.4}.cl-txt.done{text-decoration:line-through;color:#555}.progress-bar{height:6px;background:#1a1d26;border-radius:3px;margin:8px 0 20px;overflow:hidden}.progress-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#2563eb,#a78bfa);transition:.4s}[hidden]{display:none!important}@media(max-width:600px){.container{padding:14px 14px 40px}.grid,.f-grid,.fw-grid{grid-template-columns:1fr}.detail-banner{padding:20px}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#0c0e14;color:#d8dae0;line-height:1.65}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#2a2d38;border-radius:3px}
+.nav{position:sticky;top:0;z-index:200;background:rgba(12,14,20,.95);backdrop-filter:blur(14px);border-bottom:1px solid #1a1d26;display:flex;align-items:center;padding:0 16px;height:52px;gap:6px;overflow-x:auto}
+.nav-brand{font-family:'Fraunces',serif;font-weight:800;font-size:18px;color:#f0f0f0;white-space:nowrap;margin-right:8px}
+.tab{padding:6px 14px;border-radius:7px;border:none;background:transparent;color:#666;font:500 13px 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;transition:.2s}
+.tab:hover{background:#161820;color:#aaa}
+.tab.on{background:#1a1f2e;color:#60a5fa}
+.wrap{max-width:1080px;margin:0 auto;padding:20px 20px 60px}
+.hero{text-align:center;padding:36px 0 20px}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,36px);font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#666;font-size:14px;max-width:560px;margin:6px auto 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;margin-top:20px}
+.card{background:#13151c;border:1px solid #1c1f28;border-radius:14px;padding:18px 20px;cursor:pointer;position:relative;overflow:hidden;transition:.2s}
+.card:hover{border-color:#2a2e3a;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.card-bar{position:absolute;top:0;left:0;right:0;height:3px}
+.card-ico{font-size:22px;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#181b24}
+.card-lbl{font-size:10px;color:#555;font-family:'JetBrains Mono',monospace}
+.card-ttl{font-weight:600;font-size:14px}
+.card-desc{font-size:12px;color:#777;margin-top:6px}
+.sec{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid #1a1d26}
+.back{display:inline-flex;align-items:center;gap:5px;color:#60a5fa;font:500 13px 'DM Sans',sans-serif;cursor:pointer;margin-bottom:14px;padding:7px 14px;border-radius:8px;background:#151820;border:1px solid #1c1f28}
+.banner{padding:28px 32px;border-radius:16px;margin-bottom:20px}
+.banner .tg{font-size:11px;color:rgba(255,255,255,.5);font-family:'JetBrains Mono',monospace}
+.banner h1{font-family:'Fraunces',serif;font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin-top:4px}
+.kp{list-style:none;padding:0}.kp li{padding:10px 16px;margin-bottom:5px;background:#13151c;border-radius:8px;border-left:3px solid;font-size:13.5px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin:10px 0 16px}
+.fc{background:#151820;border:1px solid #1e2130;border-radius:10px;padding:13px 16px}
+.fc-n{font-size:11px;color:#777;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+.fc-eq{font-family:'JetBrains Mono',monospace;font-size:15px;color:#60a5fa;font-weight:500}
+.fc-c{font-size:11.5px;color:#555;margin-top:5px;font-style:italic}
+.exp{background:#151820;border:1px solid #1e2130;border-radius:12px;margin:8px 0 12px;overflow:hidden}
+.exp-h{padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.exp-h h4{font-size:13px;font-weight:600;margin:0}
+.exp-h .arr{color:#555;font-size:12px;transition:.2s}
+.exp.open .arr{transform:rotate(180deg)}
+.exp-b{padding:0 18px 16px;display:none;font-size:13.5px;color:#999;line-height:1.7}
+.exp.open .exp-b{display:block}
+.exp-b ul{padding-left:18px;margin-top:6px}
+.exp-b li{margin-bottom:4px}
+.ctx{background:#111318;border:1px solid #1a1d26;border-radius:12px;padding:18px 22px;margin:8px 0 16px;font-size:13.5px;color:#888}
+.pq{background:#13151c;border:1px solid #1c1f28;border-radius:12px;margin-bottom:10px;overflow:hidden}
+.pq-h{padding:12px 18px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;font-size:13px}
+.pq-h .dot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.pq-h .qt{flex:1;white-space:pre-wrap}
+.pq-h .arr{color:#555;font-size:12px;flex-shrink:0;margin-top:3px}
+.pq-b{padding:0 18px 16px;display:none}
+.pq.open .pq-b{display:block}
+.pq-sol{background:#0d0f16;border:1px solid #181b24;border-radius:10px;padding:16px 20px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.85;color:#aaa;white-space:pre-wrap;overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 16px}
+.tbl th{text-align:left;padding:10px 14px;background:#13151c;color:#777;font-weight:600;text-transform:uppercase;font-size:11px;border-bottom:1px solid #1a1d26}
+.tbl td{padding:10px 14px;border-bottom:1px solid #151820;color:#bbb}
+.tbl tr:hover td{background:#13151c}
+.bdg{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.b-c{background:#1a2e4a;color:#60a5fa}.b-m{background:#352a10;color:#f59e0b}.b-e{background:#132e22;color:#34d399}
+.fw-f{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:14px}
+.fw-b{padding:6px 12px;border-radius:7px;border:1px solid #1e2130;background:#13151c;color:#888;font:500 12px 'DM Sans',sans-serif;cursor:pointer;transition:.2s}
+.fw-b:hover{border-color:#333;color:#ccc}
+.fw-b.on{background:#1a2e4a;border-color:#2563eb;color:#60a5fa}
+.cl{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;margin-bottom:4px;background:#13151c;border-radius:8px;cursor:pointer;font-size:13px;user-select:none}
+.cl:hover{background:#161820}
+.cl-b{width:18px;height:18px;border-radius:4px;border:2px solid #333;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;transition:.15s}
+.cl-b.dn{background:#2563eb;border-color:#2563eb}
+.cl-t.dn{text-decoration:line-through;color:#555}
+.prog{height:6px;background:#1a1d26;border-radius:3px;margin:8px 0 20px;overflow:hidden}
+.prog-f{height:100%;border-radius:3px;background:linear-gradient(90deg,#2563eb,#a78bfa);transition:.4s}
+[hidden]{display:none!important}
+@media(max-width:600px){.wrap{padding:14px}.grid,.fgrid{grid-template-columns:1fr}.banner{padding:20px}}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nav-brand">C31FC</div><div class="nav-scroll"><button class="nav-tab active" onclick="showView('overview')">Overview</button><button class="nav-tab" onclick="showView('formulas')">Formula Sheet</button><button class="nav-tab" onclick="showView('sectionA')">Section A</button><button class="nav-tab" onclick="showView('sectionB')">Section B</button><button class="nav-tab" onclick="showView('checklist')">Checklist</button></div></nav>
-<div class="container">
-<div id="v-overview"><div class="hero"><h1>C31FC Finance</h1><p>Complete exam revision hub &middot; 10 lectures &middot; Section A (calculations) &middot; Section B (essays)</p></div><div class="grid" id="og"></div></div>
-<div id="v-lecture" hidden></div><div id="v-formulas" hidden></div><div id="v-sectionA" hidden></div><div id="v-sectionB" hidden></div><div id="v-checklist" hidden></div>
-</div>
+<nav class="nav">
+<div class="nav-brand">C31FC</div>
+<button class="tab on" onclick="go('ov')">Overview</button>
+<button class="tab" onclick="go('fm')">Formulas</button>
+<button class="tab" onclick="go('sa')">Section A</button>
+<button class="tab" onclick="go('sb')">Section B</button>
+<button class="tab" onclick="go('pr')">Practice</button>
+<button class="tab" onclick="go('cl')">Checklist</button>
+</nav>
+<div class="wrap" id="main"></div>
 <script>
-</body>
-</html>
+
+// ══════════ DATA ══════════
 const L=[
-{id:1,title:"Time Value of Money & NPV",icon:"\u23f3",color:"#1a5276",chapter:"Present Value & Discounting",
-kp:["Money has time value \u2014 \u00a3100 today is worth more than \u00a3100 in the future because of interest, inflation and risk","Compounding converts PV \u2192 FV (forward in time); Discounting is the reverse (backward in time)","The discount factor 1/(1+r)\u207f gets smaller as n increases \u2014 distant cash flows are worth less today","NPV = sum of all discounted cash flows minus initial investment \u2014 measures absolute value creation","Decision rule: Accept if NPV \u2265 0; reject otherwise","When comparing mutually exclusive projects, choose the highest NPV"],
-fm:[{n:"Future Value",eq:"FV\u2099 = PV \u00d7 (1 + r)\u207f",c:"What an investment grows to over n periods at rate r"},{n:"Present Value",eq:"PV = FV\u2099 / (1 + r)\u207f",c:"Today's equivalent of a future cash flow"},{n:"Discount Factor",eq:"DF = 1 / (1 + r)\u207f",c:"Multiplier converting FV to PV \u2014 always between 0 and 1"},{n:"Net Present Value",eq:"NPV = \u03a3 [CF\u209c / (1+r)\u1d57] \u2212 I\u2080",c:"Total value created after accounting for the cost of capital"}],
-dd:"Everything in finance comes back to this: a pound today is worth more than a pound tomorrow. Three reasons: (1) Time impatience \u2014 people prefer consumption now, (2) Risk \u2014 future cash flows are uncertain, (3) Inflation \u2014 purchasing power erodes. The discount rate r captures all three. When you compute NPV, you transform every cash flow into 'year-0 equivalents' so they can be safely added. A positive NPV means the project exceeds the investors' required return.",
-tf:"<strong>The 'time machine' mental model:</strong> Think of discounting as a time machine bringing future money to today. The discount factor is the 'exchange rate' between future and present pounds. At 10%, \u00a31 next year = \u00a30.91 today. Always ask: <em>when</em> does each cash flow occur, and <em>what rate</em> translates it?\n\n<strong>The 'minimum bar' trick:</strong> NPV > 0 doesn't mean accounting profit \u2014 it means the project <em>exceeds the minimum return investors demand</em>. The discount rate IS the bar. NPV = 0 means you earn exactly the required return.\n\n<strong>Exam shortcut:</strong> If given a discount factor table, use it directly. If not, compute 1/(1+r)^n for each year. Either way, set up a clear table.",
-ct:"Set up a table: Year | Cash Flow | DF | PV. Compute DF for each year. Multiply CF \u00d7 DF. Sum all PVs. Subtract I\u2080. Write: 'Since NPV > 0, the project should be accepted.'",
-el:"Foundation for ALL valuation. Used in bonds, shares, projects. NPV is theoretically the best appraisal method."},
+{id:1,t:"Time Value of Money & NPV",i:"\u23f3",co:"#1a5276",ch:"Present Value & Discounting",
+kp:["Money has time value \u2014 \u00a3100 today > \u00a3100 future (interest, inflation, risk)","Compounding: PV\u2192FV. Discounting: FV\u2192PV (the reverse)","Discount factor 1/(1+r)^n shrinks as n grows","NPV = \u03a3 discounted CFs \u2212 initial investment","Decision: Accept if NPV \u2265 0, reject otherwise","Mutually exclusive: choose highest NPV"],
+fm:[{n:"Future Value",eq:"FV = PV \u00d7 (1+r)^n",c:"Investment grows to this"},{n:"Present Value",eq:"PV = FV / (1+r)^n",c:"Today\u2019s value of a future CF"},{n:"Discount Factor",eq:"DF = 1/(1+r)^n",c:"Always 0\u20131, converts FV\u2192PV"},{n:"NPV",eq:"NPV = \u03a3[CF_t/(1+r)^t] \u2212 I_0",c:"Value created above required return"}],
+dd:"A pound today > a pound tomorrow because of (1) time impatience, (2) risk, (3) inflation. The discount rate r captures all three. NPV transforms all CFs to year-0 equivalents. Positive NPV = project exceeds investors\u2019 required return.",
+tf:[{h:"The \u2018time machine\u2019 model",b:"Discounting = time machine bringing future money to today. DF is the exchange rate. At 10%, \u00a31 next year = \u00a30.91 today. Always ask: WHEN does each CF occur, WHAT RATE translates it?"},{h:"The \u2018minimum bar\u2019 trick",b:"NPV > 0 doesn\u2019t mean profit \u2014 it means the project EXCEEDS the minimum return investors demand. The discount rate IS the bar."},{h:"Exam setup",b:"Draw table: Year | CF | DF | PV. Compute DF = 1/(1+r)^n for each year. Multiply CF\u00d7DF. Sum PVs. Subtract I_0. Write decision rule: \u2018Since NPV > 0, accept.\u2019"}],
+pq:[{q:"Project costs \u00a3200,000. CFs: Yr1=\u00a360k, Yr2=\u00a370k, Yr3=\u00a380k, Yr4=\u00a390k. Rate=12%. Find NPV.",a:"Year 0: \u2212\u00a3200,000 \u00d7 1.0000 = \u2212\u00a3200,000\nYear 1: \u00a360,000 \u00d7 1/1.12^1 = \u00d7 0.8929 = \u00a353,571\nYear 2: \u00a370,000 \u00d7 1/1.12^2 = \u00d7 0.7972 = \u00a355,804\nYear 3: \u00a380,000 \u00d7 1/1.12^3 = \u00d7 0.7118 = \u00a356,943\nYear 4: \u00a390,000 \u00d7 1/1.12^4 = \u00d7 0.6355 = \u00a357,195\n\nNPV = \u2212200,000 + 53,571 + 55,804 + 56,943 + 57,195\nNPV = +\u00a323,513\n\nSince NPV > 0, ACCEPT. Creates \u00a323,513 above 12% return.\n\nSpot: initial investment (neg CF at yr 0), the discount rate, timing of each CF."},{q:"Project A: costs \u00a3100k, NPV=\u00a330k. Project B: costs \u00a3500k, NPV=\u00a380k. Mutually exclusive. Which?",a:"Project B \u2014 higher NPV (\u00a380k > \u00a330k).\n\nNPV measures ABSOLUTE value. Even if A has higher % return, B creates \u00a350k more value. This is why NPV > IRR for mutually exclusive decisions."}]},
 
-{id:2,title:"Interest Rates & Investment Appraisal",icon:"\ud83d\udcca",color:"#1e8449",chapter:"Returns & Project Selection",
-kp:["From the firm's perspective, the discount rate = cost of capital = minimum return investors require","Geometric average return properly reverses compounding (simple average overstates multi-period returns)","AER reveals the true annual cost when compounding is more frequent than annual","IRR = the discount rate that makes NPV = 0 \u2014 the project's 'break-even' discount rate","IRR decision: Accept if IRR \u2265 cost of capital (k); reject otherwise","IRR problems: multiple IRRs (non-conventional CFs), no IRR, wrong ranking of mutually exclusive projects","Payback Period: simple but ignores time value and all cash flows beyond the cut-off","AAR: uses book values not cash flows \u2014 depends on arbitrary depreciation methods"],
-fm:[{n:"Geometric Return",eq:"r = (FV\u2099/PV)^(1/n) \u2212 1",c:"Annualised return that correctly accounts for compounding"},{n:"AER",eq:"AER = (1 + r/m)\u1d50 \u2212 1",c:"True annual rate when nominal rate r is compounded m times/year"},{n:"Doubling Time",eq:"n = log(2) / log(1+r)",c:"Periods until investment doubles at rate r"},{n:"IRR Interpolation",eq:"IRR = r\u208a + [NPV\u208a/(NPV\u208a \u2212 NPV\u208b)] \u00d7 (r\u208b \u2212 r\u208a)",c:"Estimates IRR between two trial rates"},{n:"Payback",eq:"PP = Years before recovery + Unrecovered/CF in recovery year",c:"Time to recoup initial outlay \u2014 ignores time value"},{n:"AAR",eq:"AAR = Avg Net Income / Avg Book Value",c:"Accounting return \u2014 not time-adjusted"}],
-dd:"IRR gives you a percentage you can compare directly with the cost of capital \u2014 very intuitive. But it has serious flaws: (1) Non-conventional cash flows can produce multiple IRRs. (2) For mutually exclusive projects, IRR can rank incorrectly because it ignores scale \u2014 a small project with 30% IRR may create less value than a large one with 20% IRR. (3) There may be no IRR at all. Payback is popular because managers like knowing 'how quickly do I get my money back', but it ignores time value and everything after the cut-off. AAR uses accounting numbers dependent on depreciation \u2014 not cash flows.",
-tf:"<strong>The 'NPV is king' principle:</strong> Whenever methods conflict, NPV wins. IRR, Payback, and AAR are supporting tools, not substitutes. Always conclude with NPV superiority.\n\n<strong>The 'rate vs value' distinction:</strong> IRR tells you the <em>rate</em>; NPV tells you the <em>value</em>. 50% return on \u00a31 = \u00a30.50. 15% return on \u00a31m = \u00a3150,000. Which would you prefer? This is exactly why IRR misleads on mutually exclusive projects.\n\n<strong>IRR interpolation trick:</strong> You're finding where a straight line crosses zero between two known points. Pick one rate giving small positive NPV and one giving small negative NPV \u2014 the closer together, the more accurate.",
-ct:"For IRR: Show both full NPV calculations first, then apply the interpolation formula. For AER: Identify m and the nominal rate. Common trap: confusing monthly rate with annual rate.",
-el:"Classic essay topic: NPV vs IRR vs Payback vs AAR. Know advantages, disadvantages, and when they conflict."},
+{id:2,t:"Interest Rates & Appraisal",i:"\ud83d\udcca",co:"#1e8449",ch:"Returns & Project Selection",
+kp:["Discount rate = cost of capital = minimum return","Geometric average corrects for compounding","AER reveals true annual rate with frequent compounding","IRR = rate making NPV=0","IRR: Accept if IRR \u2265 k","IRR problems: multiple, none, wrong ranking","Payback: ignores time value + post-cutoff CFs","AAR: book values, not cash flows"],
+fm:[{n:"Geometric Return",eq:"r = (FV/PV)^(1/n) \u2212 1",c:"Annualised, compounding-correct"},{n:"AER",eq:"AER = (1+r/m)^m \u2212 1",c:"True annual rate, m = compounding freq"},{n:"Doubling Time",eq:"n = log(2)/log(1+r)",c:"Periods to double"},{n:"IRR Interpolation",eq:"IRR = r+ + [NPV+/(NPV+\u2212NPV\u2212)] \u00d7 (r\u2212 \u2212 r+)",c:"Between two trial rates"},{n:"Payback",eq:"PP = Yrs before + Unrecovered/CF",c:"Ignores time value"},{n:"AAR",eq:"Avg Income / Avg Book Value",c:"Accounting, not CF-based"}],
+dd:"IRR gives % return comparable to cost of capital \u2014 intuitive but flawed: multiple IRRs possible, ignores scale, may not exist. Payback popular but weak. AAR uses accounting, not cash.",
+tf:[{h:"\u2018NPV is king\u2019 principle",b:"When NPV and IRR conflict, NPV wins. Always conclude with NPV superiority in essays."},{h:"Rate vs Value",b:"IRR = rate. NPV = value. 50% on \u00a31 = \u00a30.50. 15% on \u00a31m = \u00a3150k. This is why IRR misleads on mutually exclusive projects."},{h:"What numbers to spot",b:"For IRR: two NPVs with opposite signs. For AER: nominal rate AND compounding frequency (monthly=12, quarterly=4). For payback: cumulative CFs."}],
+pq:[{q:"NPV at 12% = +\u00a323,513. NPV at 20% = \u2212\u00a312,208. Find IRR. Cost of capital = 15%.",a:"IRR = 12% + [23,513 / (23,513+12,208)] \u00d7 (20%\u221212%)\n    = 12% + [23,513 / 35,721] \u00d7 8%\n    = 12% + 0.6584 \u00d7 8%\n    = 12% + 5.27% = 17.27%\n\nSince IRR (17.27%) > k (15%), ACCEPT.\n\nSetup: show BOTH NPV calcs first, then formula."},{q:"Nominal rate 8% compounded quarterly. Find AER.",a:"AER = (1 + 0.08/4)^4 \u2212 1\n    = (1.02)^4 \u2212 1\n    = 1.0824 \u2212 1 = 8.24%\n\n8% quoted is really 8.24% due to quarterly compounding.\nSpot: nominal rate (8%) and frequency (quarterly=4)."},{q:"Invest \u00a31,000, receive \u00a31,350 after 4 years. Annualised return? Doubling time?",a:"r = (1350/1000)^(1/4) \u2212 1 = 1.35^0.25 \u2212 1 = 7.78%\n\nWhy not 35%/4=8.75%? Simple avg OVERSTATES.\n\nDoubling: n = log(2)/log(1.0778) = 9.25 years\nRule of 72 check: 72/7.78 \u2248 9.3 \u2713"}]},
 
-{id:3,title:"Financial Markets, Equity & EMH",icon:"\ud83c\udfdb\ufe0f",color:"#7d3c98",chapter:"Market Efficiency & Share Valuation",
-kp:["Money markets (< 1yr) vs Capital markets (> 1yr)","Ordinary shares: residual ownership, voting rights, variable dividends \u2014 last to be paid","Preference shares: fixed dividend, priority in liquidation, typically no voting rights","Perpetuity: P = CF/r (flat) or P = CF\u2081/(r\u2212g) (growing) \u2014 foundation of share valuation","P/E ratio = 1/(r\u2212g) \u2014 encodes market's view of risk (r) and growth (g)","EMH: market price is the best available estimate of true underlying value","Weak form: Past prices can't predict future \u2014 technical analysis fails","Semi-strong: No public info can beat the market \u2014 fundamental analysis fails","Strong form: Even insider info reflected \u2014 probably untrue (hence insider trading laws)"],
-fm:[{n:"Flat Perpetuity",eq:"V = CF / r",c:"Value of an infinite, constant cash flow"},{n:"Growing Perpetuity",eq:"V\u2080 = CF\u2081 / (r \u2212 g)",c:"Value when CFs grow at constant rate g forever (requires g < r)"},{n:"Share Price (DVM)",eq:"P\u2080 = d\u2081 / (r \u2212 g)",c:"Gordon model \u2014 next dividend / (required return minus growth)"},{n:"P/E Ratio",eq:"P\u2080/e\u2081 = 1 / (r \u2212 g)",c:"Higher P/E = lower risk or higher expected growth"},{n:"Enterprise Value",eq:"EV = Equity + Debt \u2212 Cash",c:"Total firm value regardless of financing"}],
-dd:"The EMH argues that thousands of motivated investors with different information trade shares, and in aggregate the price reflects all available information. Galton's ox-weight experiment (1906): 787 guesses averaged within 1 pound of truth. 'Ask the Audience' has 91% accuracy vs 65% for 'Phone a Friend'. Evidence FOR: event studies show rapid reaction; random walk tests. Evidence AGAINST: anomalies (January effect, small-firm premium, momentum); behavioural finance (overreaction, herding); bubble episodes.",
-tf:"<strong>The 'three layers' approach:</strong> Weak form is easiest to defend \u2014 markets clearly don't follow simple patterns. Semi-strong is mostly true but anomalies exist. Strong form is almost certainly false \u2014 otherwise insider trading laws would be pointless.\n\n<strong>The 'two variables' trick:</strong> Every share valuation boils down to r (risk) and g (growth). If you know price and one variable, solve for the other. High P/E = either low r or high g.\n\n<strong>Exam framing:</strong> If asked to 'evaluate' EMH, present evidence on BOTH sides, then offer a nuanced conclusion. Never say markets are perfectly efficient or totally inefficient.",
-ct:"Perpetuity: CF\u2081 is NEXT year's CF, not current. g must be < r. If given d\u2080, compute d\u2081 = d\u2080(1+g) first.",
-el:"EMH was on CW1. CW2 may angle differently \u2014 e.g., connecting to behavioural finance."},
+{id:3,t:"Financial Markets & EMH",i:"\ud83c\udfdb\ufe0f",co:"#7d3c98",ch:"Market Efficiency & Share Valuation",
+kp:["Money markets (<1yr) vs Capital markets (>1yr)","Ordinary shares: residual, voting, variable dividends","Preference shares: fixed div, liquidation priority","P = CF/r (flat perp) or CF1/(r\u2212g) (growing)","P/E = 1/(r\u2212g) encodes risk and growth","EMH: price = best estimate of true value","Weak: tech analysis fails. Semi-strong: fundamental fails","Strong: even insider info reflected (probably not true)"],
+fm:[{n:"Flat Perpetuity",eq:"V = CF / r",c:"Infinite constant CF"},{n:"Growing Perpetuity",eq:"V = CF1 / (r\u2212g)",c:"CFs grow at g, need g<r"},{n:"Share Price (Gordon)",eq:"P = d1 / (r\u2212g)",c:"Next dividend / (r\u2212g)"},{n:"P/E Ratio",eq:"P/E = 1/(r\u2212g)",c:"High P/E = low risk or high growth"},{n:"Enterprise Value",eq:"EV = Equity + Debt \u2212 Cash",c:"Total firm value"}],
+dd:"EMH: thousands of investors in aggregate make price reflect all info. Galton\u2019s ox (787 guesses, 1lb off). Evidence FOR: event studies, random walk. AGAINST: anomalies, bubbles, behavioural finance.",
+tf:[{h:"d0 vs d1 trap (CRITICAL)",b:"Gordon model needs NEXT year\u2019s dividend (d1). If given current dividend d0, compute d1 = d0\u00d7(1+g). Using d0 is the most common exam error."},{h:"Three EMH layers",b:"Weak (easiest to defend) \u2192 Semi-strong (mostly true) \u2192 Strong (almost certainly false). Always present both sides in essays."},{h:"Two-variable trick",b:"Every share price = just r and g. High P/E = low r or high g. If you know price + one variable, solve for the other."}],
+pq:[{q:"Company paid \u00a32.40 dividend. Growth=5% forever. Required return=12%. Share price?",a:"Step 1: d1 = d0 \u00d7 (1+g) = 2.40 \u00d7 1.05 = \u00a32.52\nStep 2: P = d1/(r\u2212g) = 2.52/(0.12\u22120.05) = 2.52/0.07 = \u00a336.00\n\nCRITICAL: Using d0 gives 2.40/0.07 = \u00a334.29 \u2014 WRONG.\n\nWith g=0: P = 2.40/0.12 = \u00a320. Growth adds \u00a316 (44% of price)."},{q:"Firm: earnings \u00a35/share, P/E=16. What\u2019s implied r\u2212g?",a:"r\u2212g = 1/P/E = 1/16 = 6.25%\n\nIf r\u224810%, then g\u22483.75%\nShare price: \u00a35 \u00d7 16 = \u00a380\nCheck: 5/0.0625 = \u00a380 \u2713"}]},
 
-{id:4,title:"Bonds & Bond Pricing",icon:"\ud83d\udcdc",color:"#b9770e",chapter:"Fixed Income Securities",
-kp:["Bond defined by: maturity, face value, coupon rate, payment frequency","Bond value = PV of all coupons + PV of face value at maturity","Coupon = YTM \u2192 par | Coupon < YTM \u2192 discount | Coupon > YTM \u2192 premium","Bond prices and interest rates move in OPPOSITE directions \u2014 fundamental","Coupons are an annuity \u2014 use the annuity factor for efficient calculation","UK gilts: conventional, index-linked, convertible, irredeemable","LIBOR replaced by SONIA (UK) and SOFR (US)","Credit rating agencies (Moody's, S&P) assess default risk"],
-fm:[{n:"Bond Price (full)",eq:"P = \u03a3 [C/(1+y)\u1d57] + FV/(1+y)\u207f",c:"Discount each coupon individually plus face value"},{n:"Bond Price (annuity)",eq:"P = C \u00d7 AF(y,n) + FV \u00d7 DF(y,n)",c:"Annuity factor for coupons + discount factor for face value"},{n:"Annuity Factor",eq:"AF = [1 \u2212 1/(1+y)\u207f] / y",c:"PV of \u00a31 received every year for n years at rate y"},{n:"Coupon Payment",eq:"C = Coupon Rate \u00d7 Face Value",c:"Annual interest payment to bondholder"}],
-dd:"Bonds are the core of debt capital markets. The key insight is the inverse price-yield relationship: when market rates rise, existing bonds become less attractive because their fixed coupons are below the new rate \u2014 so price falls. When rates fall, existing bonds with higher coupons become more valuable. At par: coupon rate = YTM, price = face value. Treasury bills are zero-coupon instruments. Corporate bonds carry credit risk reflected in a spread.",
-tf:"<strong>The 'seesaw' model:</strong> Bond prices and interest rates sit on opposite ends of a seesaw. When one goes up, the other comes down. You can predict the direction before calculating.\n\n<strong>The 'par checkpoint':</strong> When coupon rate = YTM, price MUST equal face value. Use this to sanity-check every bond calculation. Coupon > YTM \u2192 premium (price > FV). Coupon < YTM \u2192 discount (price < FV).\n\n<strong>Two methods, same answer:</strong> Individual discounting and annuity method give identical results. Use the annuity method when possible \u2014 it's faster. For semi-annual: halve coupon rate, double periods, halve YTM.",
-ct:"Both methods must give the same price. For semi-annual: halve coupon rate, double periods, halve YTM. Always check: is your price above or below face value? Does it match the coupon vs YTM relationship?",
-el:"Bond markets, gilts, credit ratings, inverse price-yield relationship."},
+{id:4,t:"Bonds & Bond Pricing",i:"\ud83d\udcdc",co:"#b9770e",ch:"Fixed Income Securities",
+kp:["Bond: maturity, face value, coupon rate, frequency","Value = PV coupons + PV face value","Coupon=YTM\u2192par | <YTM\u2192discount | >YTM\u2192premium","Prices and yields: OPPOSITE directions","Coupons = annuity \u2192 use annuity factor","LIBOR \u2192 SONIA (UK), SOFR (US)","Credit ratings: Moody\u2019s, S&P"],
+fm:[{n:"Bond Price",eq:"P = \u03a3[C/(1+y)^t] + FV/(1+y)^n",c:"Discount each coupon + FV"},{n:"Annuity Method",eq:"P = C\u00d7AF + FV\u00d7DF",c:"Faster: AF for coupons, DF for FV"},{n:"Annuity Factor",eq:"AF = [1\u22121/(1+y)^n] / y",c:"PV of \u00a31/yr for n yrs"},{n:"Coupon",eq:"C = Rate \u00d7 Face Value",c:"Annual interest payment"}],
+dd:"Key: when market rates rise, existing bonds less attractive (fixed coupons < new rate) so price falls. When rates fall, higher-coupon bonds become valuable. At par: coupon rate = YTM.",
+tf:[{h:"The seesaw",b:"Prices and yields on opposite ends. One up, other down. Predict direction BEFORE calculating."},{h:"Par checkpoint (sanity check)",b:"Coupon=YTM \u2192 price MUST = face value. Coupon>YTM \u2192 premium. Coupon<YTM \u2192 discount. If answer violates this, you have an error."},{h:"Semi-annual bonds",b:"Halve coupon rate, double periods, halve YTM. E.g. 6% annual, 5yr, 8% YTM \u2192 3% coupon, 10 periods, 4% rate."},{h:"What to spot",b:"Face value (\u00a31,000 or \u00a3100), coupon RATE (multiply by FV for \u00a3), YTM, maturity. Check if semi-annual."}],
+pq:[{q:"Bond: FV=\u00a31,000, coupon=6% annual, 5yr, YTM=8%. Price? Par/premium/discount?",a:"C = 6% \u00d7 \u00a31,000 = \u00a360/year\n\nIndividual method:\nYr1: 60/1.08^1 = 55.56   Yr2: 60/1.08^2 = 51.44\nYr3: 60/1.08^3 = 47.63   Yr4: 60/1.08^4 = 44.10\nYr5: 60/1.08^5 = 40.83   FV: 1000/1.08^5 = 680.58\nPrice = 55.56+51.44+47.63+44.10+40.83+680.58 = \u00a3920.15\n\nAnnuity method (faster):\nAF(8%,5) = [1\u22121/1.08^5]/0.08 = [1\u22120.6806]/0.08 = 3.9927\nP = 60\u00d73.9927 + 1000\u00d70.6806 = 239.56+680.58 = \u00a3920.15 \u2713\n\nDISCOUNT (\u00a3920 < \u00a31,000) because coupon 6% < YTM 8%."},{q:"Same bond, YTM drops to 4%. New price?",a:"AF(4%,5) = [1\u22121/1.04^5]/0.04 = 4.4518\nP = 60\u00d74.4518 + 1000\u00d70.8219 = 267.11+821.93 = \u00a31,089.04\n\nPREMIUM (\u00a31,089 > \u00a31,000) because coupon 6% > YTM 4%.\n\nSummary: 8%\u2192\u00a3920 (disc), 6%\u2192\u00a31,000 (par), 4%\u2192\u00a31,089 (prem).\nAs YTM falls, price rises. The seesaw."}]},
 
-{id:5,title:"Risk, Return & Portfolio Theory",icon:"\u2696\ufe0f",color:"#c0392b",chapter:"Markowitz & Diversification",
-kp:["Risk = standard deviation of returns \u2014 measures volatility","Risk-averse investors won't take a 'fair bet' (EV=0) \u2014 need positive EV as compensation","Loss aversion: pain of losing \u00a320 > pleasure of gaining \u00a320 (Kahneman & Tversky)","Portfolio diversification reduces risk IF assets not perfectly positively correlated","With zero correlation: same expected return, lower risk \u2014 a free lunch!","Markowitz efficient frontier: portfolios with optimal return-to-risk","CML: combinations of risk-free asset + market portfolio M","All rational investors choose some mix of RFA and M based on risk appetite"],
-fm:[{n:"Expected Value",eq:"E(V) = \u03a3 V\u1d62 \u00d7 P\u1d62",c:"Probability-weighted average of all outcomes"},{n:"Variance",eq:"\u03c3\u00b2 = \u03a3 P\u1d62 \u00d7 (V\u1d62 \u2212 E(V))\u00b2",c:"Average squared deviation from mean"},{n:"Standard Deviation",eq:"\u03c3 = \u221a\u03c3\u00b2",c:"Risk in the same units as the return"},{n:"Portfolio Variance",eq:"\u03c3\u00b2\u209a = w\u2081\u00b2\u03c3\u2081\u00b2 + w\u2082\u00b2\u03c3\u2082\u00b2 + 2w\u2081w\u2082\u03c3\u2081\u03c3\u2082\u03c1\u2081\u2082",c:"Depends on weights, risks AND correlation"},{n:"Portfolio Return",eq:"E(R\u209a) = w\u2081E(R\u2081) + w\u2082E(R\u2082)",c:"Weighted average \u2014 diversification affects risk, not return"}],
-dd:"Markowitz (1952) showed mathematically that spreading investments reduces risk. The key is correlation (\u03c1): at +1, no benefit; at \u22121, risk can be eliminated; at 0, significant reduction. The coin-flip analogy: one \u00a320 bet vs two \u00a310 bets have the same EV, but the two-bet portfolio reduces worst-case probability from 50% to 25%.",
-tf:"<strong>The coin-flip intuition:</strong> One \u00a320 bet: 50% chance of \u00b1\u00a320. Two \u00a310 bets: worst case drops from 50% to 25%. Same expected value, less risk. This IS diversification.\n\n<strong>The correlation dial:</strong> Think of \u03c1 as a dial from \u22121 to +1. At +1, diversification is pointless. At \u22121, it's magic. In reality, most stocks are 0 to +0.7 \u2014 enough for it to work.\n\n<strong>Return is additive, risk is NOT:</strong> Portfolio return = weighted average. Portfolio risk \u2260 weighted average \u2014 the covariance term makes it LESS. This is the mathematical basis of diversification.\n\n<strong>Variance recipe:</strong> (1) Find E(V), (2) Subtract mean from each outcome, (3) Square, (4) Multiply by probability, (5) Sum. SD = square root.",
-ct:"For variance: go through the 5 steps methodically. For portfolio with \u03c1=0, the covariance term vanishes. Compare single-asset vs portfolio SD to demonstrate diversification benefit.",
-el:"Foundation for CAPM. Efficient frontier, correlation's role, CML."},
+{id:5,t:"Risk, Return & Portfolio Theory",i:"\u2696\ufe0f",co:"#c0392b",ch:"Markowitz & Diversification",
+kp:["Risk = standard deviation of returns","Risk-averse: need positive EV to take risk","Loss aversion: pain of loss > pleasure of equal gain","Diversification works if correlation < +1","Zero correlation: same return, lower risk","Efficient frontier: optimal return/risk portfolios","CML: risk-free + market portfolio M"],
+fm:[{n:"Expected Value",eq:"E(V) = \u03a3 Vi\u00d7Pi",c:"Probability-weighted average"},{n:"Variance",eq:"\u03c3\u00b2 = \u03a3 Pi\u00d7(Vi\u2212E(V))\u00b2",c:"Avg squared deviation"},{n:"Std Dev",eq:"\u03c3 = \u221a\u03c3\u00b2",c:"Risk in return units"},{n:"Portfolio Var",eq:"\u03c3\u00b2p = w1\u00b2\u03c31\u00b2 + w2\u00b2\u03c32\u00b2 + 2w1w2\u03c31\u03c32\u03c1",c:"Weights + risks + correlation"},{n:"Portfolio Return",eq:"E(Rp) = w1\u00d7E(R1) + w2\u00d7E(R2)",c:"Simple weighted average"}],
+dd:"Markowitz (1952): spreading investments reduces risk. Correlation is key. At \u03c1=+1 no benefit. At \u03c1=\u22121 risk eliminated. At \u03c1=0 significant reduction. Coin flip: two \u00a310 bets vs one \u00a320 bet \u2014 same EV, worst-case drops 50%\u219225%.",
+tf:[{h:"Return additive, risk NOT",b:"Portfolio return = weighted average. But portfolio risk \u2260 weighted average \u2014 covariance term makes it LESS. This is diversification\u2019s mathematical basis."},{h:"Variance recipe",b:"(1) Find E(V), (2) Subtract mean from each outcome, (3) Square, (4) Multiply by probability, (5) Sum = variance. SD = square root. Set up columns."},{h:"Zero correlation shortcut",b:"When \u03c1=0, the covariance term 2w1w2\u03c31\u03c32\u03c1 vanishes. Much simpler: \u03c3\u00b2p = w1\u00b2\u03c31\u00b2 + w2\u00b2\u03c32\u00b2 only."}],
+pq:[{q:"Stock X: Boom(P=0.3)=20%, Normal(P=0.5)=10%, Recession(P=0.2)=\u22125%. Find E(R), \u03c3\u00b2, \u03c3.",a:"E(R) = 0.3\u00d720% + 0.5\u00d710% + 0.2\u00d7(\u22125%) = 6+5\u22121 = 10%\n\nVariance:\nBoom:   0.3\u00d7(20\u221210)\u00b2 = 0.3\u00d7100 = 30\nNormal: 0.5\u00d7(10\u221210)\u00b2 = 0\nRecess: 0.2\u00d7(\u22125\u221210)\u00b2 = 0.2\u00d7225 = 45\n\u03c3\u00b2 = 30+0+45 = 75 (%\u00b2) = 0.0075\n\n\u03c3 = \u221a75 = 8.66%"},{q:"P: E(R)=12%, \u03c3=20%. Q: E(R)=8%, \u03c3=10%. Correlation=0. 50/50 portfolio.",a:"Return: 0.5\u00d712% + 0.5\u00d78% = 10%\n\nVariance (\u03c1=0):\n\u03c3\u00b2p = 0.25\u00d7400 + 0.25\u00d7100 = 100+25 = 125\n\u03c3p = \u221a125 = 11.18%\n\nWeighted avg risk would be: 0.5\u00d720+0.5\u00d710 = 15%\nActual: 11.18% \u2014 risk REDUCED by 3.82pp!\nSame return, less risk = diversification benefit."}]},
 
-{id:6,title:"Capital Asset Pricing Model (CAPM)",icon:"\u03b2",color:"#2471a3",chapter:"Systematic Risk & Asset Pricing",
-kp:["Diversification limit at ~20 assets \u2014 beyond this, adding more doesn't help","Systematic (market) vs Unsystematic (firm-specific) risk","Market only compensates systematic risk \u2014 unsystematic can be diversified away","Beta = Cov(R\u1d62,R\u2098) / Var(R\u2098) \u2014 standardised covariance with the market","\u03b2=1 for market; \u03b2>1 = more volatile; \u03b2<1 = less volatile","SML: E(R\u1d62) = Rf + \u03b2\u1d62(Rm \u2212 Rf) \u2014 expected return given systematic risk","Above SML = undervalued (buy); Below = overvalued (sell); On SML = fairly priced","Assumptions: rational investors, efficient markets, single period, risk-free borrowing/lending","Limitations: unstable beta, Fama & French multi-factor critique, unrealistic assumptions","Advantage over DGM: explicitly models risk rather than relying on growth estimates"],
-fm:[{n:"Beta",eq:"\u03b2\u1d62 = Cov(R\u1d62, R\u2098) / Var(R\u2098)",c:"How much the stock moves with the market"},{n:"SML / CAPM",eq:"E(R\u1d62) = Rf + \u03b2\u1d62 \u00d7 (E(R\u2098) \u2212 Rf)",c:"'Fair' expected return as function of systematic risk"},{n:"Market Risk Premium",eq:"MRP = E(R\u2098) \u2212 Rf",c:"Extra return market demands over risk-free rate"},{n:"Covariance",eq:"Cov(X,Y) = \u03a3 P\u1d62(X\u1d62 \u2212 X\u0304)(Y\u1d62 \u2212 Y\u0304)",c:"How two variables move together"}],
-dd:"CAPM builds on Markowitz. Since rational investors hold diversified portfolios, only systematic risk matters. Beta quantifies this. \u03b2=1.5 means the stock swings 1.5\u00d7 the market. SML gives expected return \u2014 usable as Ke in WACC. Fama & French (1992) showed size and value explain returns better than beta alone \u2192 three-factor model. Despite critique, CAPM remains industry standard.",
-tf:"<strong>Two types of risk:</strong> Total = systematic + unsystematic. You can't avoid systematic (recessions hit everyone), but CAN eliminate unsystematic by holding ~20 stocks. Since it's 'free' to remove unsystematic risk, the market doesn't pay for it.\n\n<strong>SML as a 'fair price line':</strong> Beta on x-axis, return on y-axis. Above the line = bargain. Below = overpriced. On the line = fairly valued.\n\n<strong>Beta as 'for every 1%':</strong> \u03b2 = 1.5 means: for every 1% the market moves, this stock moves about 1.5%. It answers a concrete, intuitive question.\n\n<strong>CAPM vs DGM:</strong> CAPM models risk explicitly (through \u03b2). DGM (Ke = D\u2081/P\u2080 + g) relies on dividend data and growth estimates. CAPM works for all stocks; DGM only for dividend-payers with stable growth. CAPM is generally considered superior.",
-ct:"Beta from data: (1) Mean returns, (2) Deviations, (3) Stock dev \u00d7 market dev \u00d7 probability = covariance, (4) Market variance, (5) \u03b2 = cov/var. Then plug into SML.",
-el:"CAPM was on CW1. Know assumptions, Fama & French critique, DGM comparison."},
+{id:6,t:"CAPM",i:"\u03b2",co:"#2471a3",ch:"Systematic Risk & Asset Pricing",
+kp:["Diversification limit ~20 assets","Systematic (market) vs Unsystematic (firm) risk","Market compensates ONLY systematic risk","\u03b2 = Cov(Ri,Rm)/Var(Rm)","\u03b2=1 market, >1 more volatile, <1 less","SML: E(Ri) = Rf + \u03b2i(Rm\u2212Rf)","Above SML=undervalued, Below=overvalued","Fama & French (1992) multi-factor critique","Better than DGM: explicitly models risk"],
+fm:[{n:"Beta",eq:"\u03b2 = Cov(Ri,Rm) / Var(Rm)",c:"Co-movement with market"},{n:"SML",eq:"E(Ri) = Rf + \u03b2(Rm\u2212Rf)",c:"Fair return for systematic risk"},{n:"MRP",eq:"MRP = Rm \u2212 Rf",c:"Market risk premium"},{n:"Covariance",eq:"Cov = \u03a3 Pi(Xi\u2212X\u0304)(Yi\u2212Y\u0304)",c:"Joint movement"}],
+dd:"CAPM builds on Markowitz. Only systematic risk rewarded. Beta quantifies it. SML gives fair return = Ke for WACC. Fama & French showed size+value explain better, but CAPM remains standard.",
+tf:[{h:"Beta as \u2018for every 1%\u2019",b:"\u03b2=1.5: for every 1% market moves, stock moves ~1.5%. Simple interpretation."},{h:"SML as fair-price line",b:"Above = undervalued (buy). Below = overvalued (sell). On = fairly priced."},{h:"CAPM vs DGM",b:"CAPM: models risk via \u03b2, works for all stocks. DGM: Ke=D1/P0+g, only dividend-payers. CAPM generally superior."},{h:"Beta calculation steps",b:"(1) Mean returns for stock & market, (2) Deviations, (3) Stock dev \u00d7 market dev \u00d7 prob = covariance, (4) Market variance, (5) \u03b2 = cov/var."}],
+pq:[{q:"Rf=3%, Rm=11%. Stock A: \u03b2=1.4, Stock B: \u03b2=0.7. Expected returns? A yields 14%: over/undervalued?",a:"A: E(R) = 3% + 1.4\u00d7(11%\u22123%) = 3% + 11.2% = 14.2%\nB: E(R) = 3% + 0.7\u00d78% = 3% + 5.6% = 8.6%\n\nStock A: CAPM says 14.2%, actual 14%.\n14% < 14.2% \u2192 BELOW SML \u2192 OVERVALUED.\nNot enough return for its risk."},{q:"Cov(Stock,Market)=0.006, Var(Market)=0.004. Rf=2%, Rm=10%. Find \u03b2 and E(R).",a:"\u03b2 = 0.006/0.004 = 1.5\n\nE(R) = 2% + 1.5\u00d7(10%\u22122%) = 2%+12% = 14%\n\n1.5\u00d7 market volatility \u2192 investors need 14%."}]},
 
-{id:7,title:"Derivatives & Foreign Exchange",icon:"\ud83c\udf10",color:"#117a65",chapter:"Risk Management & Currency Markets",
-kp:["Derivative = contract deriving value from an underlying asset","Four types: Forwards, Futures, Options, Swaps","Forwards: OTC, customised, held to maturity, counterparty risk","Futures: exchange-traded, standardised, daily mark-to-market, clearing house, no counterparty risk","Options: right NOT obligation; call (buy) / put (sell); buyer pays premium","Options: asymmetric payoff \u2014 limited downside (premium), unlimited upside for buyer","Swaps: exchange cash flows \u2014 e.g., fixed \u2194 floating rate","Uses: hedging, speculation, arbitrage \u2014 derivatives are zero-sum games","Exchange rates: direct vs indirect; bid vs ask (spread); spot vs forward","PPP: rates adjust for inflation differentials between countries","IRP: interest rate differentials offset by forward premium/discount","Three FX risks: Transaction (cash flow), Translation (accounting), Economic (competitiveness)","Internal hedging: leading/lagging, netting, foreign currency borrowing"],
-fm:[{n:"Call Option Profit",eq:"Profit = max(S \u2212 E, 0) \u2212 Premium",c:"Exercise only if spot S > exercise price E"},{n:"Put Option Profit",eq:"Profit = max(E \u2212 S, 0) \u2212 Premium",c:"Exercise only if exercise E > spot S"},{n:"Margin Call",eq:"When balance < maintenance margin",c:"Top up to initial margin level"},{n:"Relative PPP",eq:"\u0394FX \u2248 Inflation_dom \u2212 Inflation_for",c:"Higher-inflation currency depreciates"},{n:"Covered IRP",eq:"F/S = (1 + r_d) / (1 + r_f)",c:"Forward rate eliminates arbitrage from interest differentials"}],
-dd:"Derivatives originated in 1850s Chicago for grain price certainty. Forwards fix future prices but you're 'stuck' if prices move favourably. Futures solve counterparty risk via clearing houses. Options solve the 'stuck' problem: pay a premium for the RIGHT (not obligation) to trade. Swaps transform exposure. In FOREX: PPP explains long-run trends (Big Mac Index), IRP explains forward-spot relationships. Three FX risks: transaction (immediate), translation (accounting), economic (strategic competitiveness).",
-tf:"<strong>Options as insurance:</strong> Buying a put = insurance on your shares. Premium = insurance cost. If price falls below exercise price, insurance pays out. If price stays high, you lose the premium but you're happy.\n\n<strong>Forwards vs Futures = bespoke suit vs off-the-rack:</strong> Forwards are tailored but the tailor might go bankrupt (counterparty risk). Futures are standardised but the department store (exchange) guarantees delivery.\n\n<strong>The zero-sum check:</strong> For every derivatives question, ask: if one party gains, who loses? In hedging, the gain/loss on the derivative offsets the loss/gain on the underlying.\n\n<strong>Margin tracking:</strong> Start with initial margin. Daily: price change \u2192 P&L \u2192 adjust balance. If balance < maintenance \u2192 margin call \u2192 top up to initial.",
-ct:"Futures: Day | Price | Daily P&L | Balance | Margin Call table. Options: payoff diagrams. FOREX: clarify base vs quote currency.",
-el:"Forwards vs Futures table. Options payoff. Hedging strategies. FX theories. Transaction/Translation/Economic risk."},
+{id:7,t:"Derivatives & FOREX",i:"\ud83c\udf10",co:"#117a65",ch:"Risk Management & Currency",
+kp:["Derivative = value from underlying","Forwards: OTC, customised, counterparty risk","Futures: exchange, standardised, mark-to-market","Options: right not obligation, premium","Asymmetric payoff: limited loss, unlimited gain","Swaps: exchange CFs (fixed\u2194floating)","Zero-sum game","PPP: FX adjusts for inflation","IRP: interest diffs \u2192 forward premium/discount","3 FX risks: Transaction, Translation, Economic"],
+fm:[{n:"Call Profit",eq:"max(S\u2212E,0) \u2212 Premium",c:"Exercise if S>E"},{n:"Put Profit",eq:"max(E\u2212S,0) \u2212 Premium",c:"Exercise if E>S"},{n:"Margin Call",eq:"Balance < maintenance margin",c:"Top up to initial"},{n:"PPP",eq:"\u0394FX \u2248 Infl_dom \u2212 Infl_for",c:"Higher inflation \u2192 depreciation"},{n:"IRP",eq:"F/S = (1+rd)/(1+rf)",c:"Forward eliminates arbitrage"}],
+dd:"Forwards fix future prices but you\u2019re stuck. Futures add clearing + mark-to-market. Options: premium for right (not obligation). Swaps transform exposure.",
+tf:[{h:"Options as insurance",b:"Put = insurance on shares. Premium = cost. Price falls below exercise \u2192 pays out. High = lose premium but happy."},{h:"Forwards vs Futures",b:"Bespoke suit (tailored, counterparty risk) vs off-the-rack (standardised, exchange guarantee). Know the 6 dimensions."},{h:"Margin tracking",b:"Initial margin \u2192 daily P&L \u2192 adjust \u2192 if below maintenance \u2192 top up to INITIAL (not maintenance). Net P&L = (final\u2212entry)\u00d7contracts."}],
+pq:[{q:"Buy call: E=\u00a350, premium=\u00a34. At maturity: (a)\u00a360 (b)\u00a352 (c)\u00a345.",a:"(a) S=60: Payoff=max(60\u221250,0)=10. Profit=10\u22124= +\u00a36. Exercise YES.\n(b) S=52: Payoff=max(52\u221250,0)=2. Profit=2\u22124= \u2212\u00a32. Exercise YES (recover \u00a32).\n(c) S=45: Payoff=max(45\u221250,0)=0. Profit=\u2212\u00a34. Exercise NO.\n\nBreak-even: \u00a354. Max loss = premium (\u00a34). Upside unlimited."},{q:"Long 5 futures at \u00a3500. Initial margin=\u00a3500, maintenance=\u00a3375.\nDay2:\u00a3490, Day3:\u00a3470, Day4:\u00a3485, Day5:\u00a3510.",a:"Day1: P=500, Bal=\u00a3500\nDay2: PL=(490\u2212500)\u00d75=\u221250. Bal=450. Call? No (>375)\nDay3: PL=(470\u2212490)\u00d75=\u2212100. Bal=350. Call? YES (<375)\n  Top up: 500\u2212350=+\u00a3150. Bal=\u00a3500\nDay4: PL=(485\u2212470)\u00d75=+75. Bal=575\nDay5: PL=(510\u2212485)\u00d75=+125. Bal=700\n\nNet PL: (510\u2212500)\u00d75 = +\u00a350\nCash in: 500+150=650. Final: 700."}]},
 
-{id:8,title:"WACC & Modigliani-Miller",icon:"\ud83c\udfd7\ufe0f",color:"#6c3483",chapter:"Capital Structure & Cost of Capital",
-kp:["WACC = weighted average cost of capital \u2014 minimum return firm must earn","Cost of Debt after tax: Kd(1\u2212T) \u2014 interest is tax-deductible","Cost of Pref Shares: Kps = Div/P\u2080 \u2014 flat perpetuity","Cost of Equity via DGM: Kos = D\u2081/P\u2080 + g","Cost of Equity via CAPM: Kos = Rf + \u03b2(Rm \u2212 Rf)","Use MARKET values for weights, not book values","MM 1958 (no tax): VL = VU; capital structure irrelevant; WACC constant","Pizza analogy: more slices \u2260 more pizza","MM 1963 (with tax): VL = VU + TD; debt adds value via tax shield","100% debt optimal under MM 1963 \u2014 but ignores financial distress","Financial distress: direct (legal fees) + indirect (lost customers, fire sales)","Trade-off theory: optimal gearing where tax benefit = distress cost"],
-fm:[{n:"WACC",eq:"WACC = Kd(1\u2212T)\u00d7Wd + Kps\u00d7Wps + Kos\u00d7Wos",c:"Weighted average of all capital costs"},{n:"Cost of Debt (after-tax)",eq:"Kdt = Kd \u00d7 (1 \u2212 T)",c:"Tax-adjusted because interest reduces taxable profit"},{n:"Cost of Pref Shares",eq:"Kps = Div / P\u2080",c:"Fixed dividend / market price"},{n:"Cost of Equity (DGM)",eq:"Kos = D\u2081/P\u2080 + g",c:"Dividend yield + expected growth"},{n:"Cost of Equity (CAPM)",eq:"Kos = Rf + \u03b2(Rm \u2212 Rf)",c:"Risk-free + risk premium"},{n:"MM 1958 Prop I",eq:"VL = VU",c:"Without tax: structure irrelevant"},{n:"MM 1963 Prop I",eq:"VL = VU + T\u00d7D",c:"With tax: each \u00a3 of debt adds T pence via tax shield"},{n:"MM Prop II",eq:"Ke = Ku + (Ku \u2212 Kd) \u00d7 D/E",c:"Cost of equity rises linearly with leverage"}],
-dd:"MM 1958 showed (under perfect markets) that financing doesn't affect value \u2014 total value depends on asset cash flows, not how they're split (pizza analogy). With tax (1963), interest is deductible, creating a tax shield worth T\u00d7D. But 100% debt is absurd because distress costs rise. Trade-off theory finds the optimum where marginal tax benefit equals marginal distress cost.",
-tf:"<strong>The pizza analogy (MM 1958):</strong> Yogi Berra: 'Cut it in 8, I'm hungry.' Total pizza doesn't change. Splitting cash flows between debt/equity doesn't change total value. Breaks down with tax.\n\n<strong>The three-act play:</strong> Act 1 (MM 1958): Structure irrelevant. Act 2 (MM 1963): More debt = more value (tax shield). Act 3 (Trade-off): Limit because distress costs rise. Each act relaxes an assumption.\n\n<strong>WACC checklist:</strong> (1) Cost of each source \u2014 DON'T FORGET TAX ON DEBT. (2) Market value weights. (3) Formula. Common trap: using before-tax cost of debt.",
-ct:"WACC: (1) Each cost separately (Kd after tax!), (2) Market value weights, (3) Formula. Show all sub-calculations.",
-el:"Capital structure debate. MM with/without tax. Pizza analogy. Distress costs. Trade-off theory."},
+{id:8,t:"WACC & Modigliani-Miller",i:"\ud83c\udfd7\ufe0f",co:"#6c3483",ch:"Capital Structure",
+kp:["WACC = minimum return to earn","Kd after tax = Kd\u00d7(1\u2212T)","Kps = Div/P0","Kos: DGM = D1/P0+g, CAPM = Rf+\u03b2(Rm\u2212Rf)","MARKET value weights","MM 1958: VL=VU, structure irrelevant","Pizza: more slices \u2260 more pizza","MM 1963: VL=VU+TD, tax shield","Financial distress limits debt","Trade-off: tax shield vs distress cost"],
+fm:[{n:"WACC",eq:"Kd(1\u2212T)\u00d7Wd + Kps\u00d7Wps + Kos\u00d7Wos",c:"Weighted average"},{n:"After-tax Debt",eq:"Kdt = Kd(1\u2212T)",c:"Interest tax-deductible"},{n:"Pref Shares",eq:"Kps = Div/P0",c:"Fixed div / price"},{n:"Equity (DGM)",eq:"Kos = D1/P0 + g",c:"Yield + growth"},{n:"Equity (CAPM)",eq:"Kos = Rf + \u03b2(Rm\u2212Rf)",c:"Risk-free + premium"},{n:"MM58",eq:"VL = VU",c:"No tax: irrelevant"},{n:"MM63",eq:"VL = VU + TD",c:"Tax shield value"},{n:"MM Prop II",eq:"Ke = Ku+(Ku\u2212Kd)D/E",c:"Ke rises with leverage"}],
+dd:"MM 1958: financing irrelevant (pizza). 1963 with tax: interest deductible \u2192 shield TD. 100% debt? No \u2014 distress costs. Trade-off finds optimum.",
+tf:[{h:"WACC checklist",b:"(1) Cost of each source \u2014 DON\u2019T FORGET TAX ON DEBT. (2) Market value weights \u2014 NOT book. (3) Formula. Most common mistake: pre-tax debt cost."},{h:"Three-act play (essays)",b:"Act 1 (MM58): irrelevant. Act 2 (MM63): debt adds value. Act 3 (Trade-off): distress limits it."},{h:"Numbers to find",b:"Bond YTM or interest rate (Kd), dividend+price (Kps, Kos), beta+market data (CAPM Kos), TAX RATE, MARKET values of components."}],
+pq:[{q:"Equity \u00a36m (\u03b2=1.2, Rf=4%, Rm=12%). Prefs \u00a31.5m (div=\u00a30.80, price=\u00a310). Bonds \u00a32.5m (YTM=6%). Tax=25%. WACC?",a:"Step 1 \u2014 Costs:\nKos = 4%+1.2\u00d7(12%\u22124%) = 4%+9.6% = 13.6%\nKps = 0.80/10 = 8%\nKdt = 6%\u00d7(1\u22120.25) = 4.5%  \u2190 DON\u2019T FORGET TAX!\n\nStep 2 \u2014 Weights (market values):\nV = 6+1.5+2.5 = \u00a310m\nWos=0.60, Wps=0.15, Wd=0.25\n\nStep 3 \u2014 WACC:\n= 4.5%\u00d70.25 + 8%\u00d70.15 + 13.6%\u00d70.60\n= 1.125 + 1.20 + 8.16 = 10.49%\n\nFirm must earn \u226510.49% on investments."}]},
 
-{id:9,title:"Dividend Policy",icon:"\ud83d\udcb0",color:"#d4ac0d",chapter:"Dividends vs Retained Earnings",
-kp:["Dividend policy = distribute earnings vs retain and reinvest","MM Irrelevance: under perfect markets, payout ratio doesn't affect value","'Homemade dividends': investors can sell shares to create desired income","Key: price identical regardless of payout IF retained earnings earn ROE = Ke","Bird-in-the-Hand (Gordon 1959): prefer certain dividends \u2014 largely refuted as 'fallacy'","Tax Preference: capital gains taxed lower \u2192 low payout preferred","Signalling: dividend changes convey management's private information","Pecking Order: internal funds \u2192 debt \u2192 equity (cheapest to most expensive)","Akerlof's 'lemons': external investors can't tell jewels from lemons","Clientele Effect: different investor types prefer different payout patterns","Lintner (1956): firms smooth dividends \u2014 only increase when sustainable","Share buybacks: flexible, tax-efficient alternative to dividends"],
-fm:[{n:"Growth Rate",eq:"g = Retention Ratio \u00d7 ROE",c:"Growth funded by retained earnings"},{n:"Price (100% payout)",eq:"P = Div / Ke",c:"Flat perpetuity \u2014 no growth"},{n:"Price (partial payout)",eq:"P = D\u2081 / (Ke \u2212 g)",c:"Gordon Growth Model"},{n:"MM Proof",eq:"If ROE = Ke, P is same for any payout ratio",c:"Value from growth exactly compensates lost dividends"}],
-dd:"MM argue value depends on earnings power, not how earnings are split. If a firm cuts dividends, retained earnings generate growth whose PV exactly compensates. In reality: taxes discriminate, transaction costs exist, and dividends send signals. Pecking Order (Akerlof's lemons) explains preference for internal financing. Lintner found firms smooth dividends empirically.",
-tf:"<strong>MM world vs real world:</strong> MM's logic is airtight in a perfect world. Every other theory says: 'Yes, but the real world has [taxes / info asymmetry / transaction costs].' Use MM as baseline, layer on frictions.\n\n<strong>Signal vs noise:</strong> Dividends work as signals because they're costly to fake. A firm raising dividends commits to higher future payouts \u2014 if unsustainable, the embarrassing cut destroys value.\n\n<strong>Pecking Order chain:</strong> Info asymmetry \u2192 external investors demand premium \u2192 external capital expensive \u2192 prefer internal funds \u2192 dividends only from leftover cash.\n\n<strong>The numerical proof:</strong> Show P = \u00a310 with 100% payout AND P = \u00a310 with 20% payout (when ROE = Ke). This is the most convincing exam technique.",
-ct:"MM proof: Scenario 1: P = \u00a31/0.10 = \u00a310. Scenario 2: g = 0.8\u00d710% = 8%, D\u2081 = \u00a30.20, P = 0.20/(0.10\u22120.08) = \u00a310. Same!",
-el:"Compare all theories. Akerlof's lemons \u2192 pecking order. Lintner's smoothing. Buybacks."},
+{id:9,t:"Dividend Policy",i:"\ud83d\udcb0",co:"#d4ac0d",ch:"Dividends vs Retained Earnings",
+kp:["Payout: distribute vs retain & reinvest","MM: irrelevant in perfect markets","Homemade dividends: sell shares","Price same if ROE=Ke","Bird-in-hand: refuted as fallacy","Tax preference: CG taxed lower","Signalling: div changes = info","Pecking order: internal\u2192debt\u2192equity","Clientele effect: investor preferences","Lintner: firms smooth dividends","Buybacks: flexible alternative"],
+fm:[{n:"Growth",eq:"g = Retention \u00d7 ROE",c:"Growth from retained earnings"},{n:"100% Payout",eq:"P = Div/Ke",c:"No growth perpetuity"},{n:"Partial Payout",eq:"P = D1/(Ke\u2212g)",c:"Gordon Growth Model"},{n:"MM Proof",eq:"ROE=Ke \u2192 P same for any payout",c:"Growth compensates lost div"}],
+dd:"MM: value = earnings power, not payout. In reality: taxes, transaction costs, signalling. Pecking order from Akerlof\u2019s lemons. Lintner: smoothing.",
+tf:[{h:"The numerical proof (exam gold)",b:"Show P=\u00a310 with 100% payout AND P=\u00a310 with 40% payout when ROE=Ke. Most convincing technique."},{h:"Signal vs noise",b:"Dividends credible because costly to fake. Raising commits to future \u2014 if unsustainable, cut destroys value."},{h:"Pecking order chain",b:"Info asymmetry \u2192 external premium \u2192 expensive \u2192 prefer internal \u2192 divs from leftover."}],
+pq:[{q:"Prove MM: Earnings=\u00a31, ROE=Ke=10%. Compare 100% vs 40% payout.",a:"100% payout: Div=\u00a31, g=0\nP = 1/0.10 = \u00a310.00\n\n40% payout: Div=\u00a30.40, Retention=0.60\ng = 0.60\u00d710% = 6%\nP = 0.40/(0.10\u22120.06) = 0.40/0.04 = \u00a310.00\n\nSAME PRICE! ROE=Ke \u2192 growth compensates lower div.\nBreaks if: ROE\u2260Ke, or real world (taxes, signalling)."}]},
 
-{id:10,title:"Working Capital Management",icon:"\ud83d\udd04",color:"#a04000",chapter:"Liquidity & Day-to-Day Finance",
-kp:["NWC = Current Assets \u2212 Current Liabilities \u2014 measures liquidity","WCM balances liquidity risk vs profitability","Operating Cycle = DIO + DSO","Cash Conversion Cycle = DIO + DSO \u2212 DPO","Shorter CCC = more efficient \u2014 less external financing needed","Aggressive: low WC, high return, high shortage risk","Conservative: high WC, low risk, high carrying costs","Trade credit (3/10 net 40): implicit interest ~44.9% p.a. if discount not taken","EOQ minimises total ordering + carrying costs","JIT (Toyota): minimal inventory, strong supplier relationships","JIT weakness: no buffer for disruptions (COVID exposed this)","Factoring: sell receivables; Invoice discounting: borrow against them","Financing: maturity matching, aggressive (short-term), conservative (long-term)"],
-fm:[{n:"NWC",eq:"NWC = CA \u2212 CL",c:"Positive = can cover short-term obligations"},{n:"DIO",eq:"DIO = (Inventory / COGS) \u00d7 365",c:"Days goods sit in inventory"},{n:"DSO",eq:"DSO = (Receivables / Revenue) \u00d7 365",c:"Days until customers pay"},{n:"DPO",eq:"DPO = (Payables / COGS) \u00d7 365",c:"Days firm takes to pay suppliers"},{n:"Operating Cycle",eq:"OC = DIO + DSO",c:"Raw material receipt to cash collection"},{n:"CCC",eq:"CCC = DIO + DSO \u2212 DPO",c:"Net days between cash out and cash in"},{n:"Trade Credit Cost",eq:"Cost = [d/(1\u2212d)]^(365/(full\u2212disc)) \u2212 1",c:"Annualised cost of skipping early-payment discount"},{n:"EOQ",eq:"EOQ = \u221a(2 \u00d7 D \u00d7 S / H)",c:"D=annual demand, S=order cost, H=holding cost/unit"}],
-dd:"CCC is the key: positive = you pay suppliers before collecting from customers. Aggressive WCM minimises current assets for higher returns but risks stockouts. Conservative WCM holds buffers but ties up capital. EOQ balances order costs vs carrying costs. JIT works brilliantly until supply chains break. Trade credit (3/10 net 40) sounds small but annualises to ~44.9%.",
-tf:"<strong>CCC as a 'cash gap':</strong> Pay supplier (Day 0), inventory sits (DIO), sell and wait (DSO), but you delayed payment by DPO. CCC = the gap you must finance. Negative CCC (some retailers) = suppliers finance YOU.\n\n<strong>Too much vs too little:</strong> For every WC component, there's a cost of too much AND too little. The optimal level minimises the sum.\n\n<strong>Trade credit as a hidden loan:</strong> '3/10 net 40' = pay in 10 days for 3% off, or full price by day 40. Skipping = borrowing 97% for 30 days at 3% \u2192 ~44.9% annualised. Way more than a bank loan.\n\n<strong>Aggressive vs Conservative = risk-return dial:</strong> Aggressive WCM is like a high-\u03b2 stock. Conservative is like a government bond. The broader risk-return theme again.",
-ct:"CCC: each component from B/S and P&L, then combine. Trade credit: [0.03/0.97]^(365/30)\u22121. EOQ: identify D, S, H and plug in.",
-el:"WCM trade-offs. Aggressive vs conservative. Factoring vs discounting. JIT pros/cons. Financing strategies."}
+{id:10,t:"Working Capital Management",i:"\ud83d\udd04",co:"#a04000",ch:"Liquidity & Operations",
+kp:["NWC = CA \u2212 CL","Balance liquidity vs profitability","OC = DIO + DSO","CCC = DIO + DSO \u2212 DPO","Shorter CCC = more efficient","Aggressive: low WC, high risk/return","Conservative: high WC, safe, costly","Trade credit (3/10 net 40) \u2248 44.9%!","EOQ = \u221a(2DS/H)","JIT: minimal inventory, strong suppliers","Factoring vs invoice discounting","Financing: matching, aggressive, conservative"],
+fm:[{n:"NWC",eq:"CA \u2212 CL",c:"Positive = covers short-term"},{n:"DIO",eq:"(Inv/COGS)\u00d7365",c:"Days in inventory"},{n:"DSO",eq:"(Rec/Revenue)\u00d7365",c:"Days to collect"},{n:"DPO",eq:"(Pay/COGS)\u00d7365",c:"Days to pay"},{n:"OC",eq:"DIO + DSO",c:"Purchase to collection"},{n:"CCC",eq:"DIO + DSO \u2212 DPO",c:"Cash gap"},{n:"Trade Credit",eq:"[d/(1\u2212d)]^(365/(full\u2212disc))\u22121",c:"Annualised cost"},{n:"EOQ",eq:"\u221a(2DS/H)",c:"D=demand, S=order, H=hold"}],
+dd:"CCC = cash gap. Positive = pay before collecting. EOQ balances ordering vs carrying. JIT works until supply breaks. Trade credit (3/10 net 40) annualises to ~44.9%!",
+tf:[{h:"CCC as cash gap",b:"Pay supplier \u2192 inventory sits (DIO) \u2192 sell \u2192 wait (DSO). But delayed payment by DPO. Gap = CCC. Negative = suppliers finance you."},{h:"Trade credit as hidden loan",b:"3/10 net 40 = 3% off for paying in 10 days vs full by 40. Skipping = borrowing 97% for 30 days at 3%. Annualised \u2248 44.9%. Way more than a bank loan!"},{h:"EOQ insight",b:"At optimal quantity, ordering cost EXACTLY equals holding cost. If they don\u2019t match, recheck."}],
+pq:[{q:"Rev=\u00a3800k, COGS=\u00a3500k, Inv=\u00a330k, Rec=\u00a360k, Pay=\u00a340k. Find CCC.",a:"DIO = (30,000/500,000)\u00d7365 = 21.9 days\nDSO = (60,000/800,000)\u00d7365 = 27.4 days\nDPO = (40,000/500,000)\u00d7365 = 29.2 days\n\nOC = 21.9+27.4 = 49.3 days\nCCC = 21.9+27.4\u221229.2 = 20.1 days\n\n20-day gap: pay suppliers ~20 days before collecting."},{q:"Terms: 2/10 net 30. Annualised cost? Bank=15%. Take discount?",a:"Cost = [0.02/0.98]^(365/20) \u2212 1\n     = (1.02041)^18.25 \u2212 1\n     = 44.59%\n\n44.6% >> 15% \u2192 TAKE the discount, borrow from bank.\nThat 2% sounds small but annualised = enormous."},{q:"Demand=10,000. Order cost=\u00a350. Hold cost=\u00a32/unit/yr. EOQ?",a:"EOQ = \u221a(2\u00d710,000\u00d750/2) = \u221a500,000 = 707 units\nOrders/yr: 10,000/707 = 14.1\n\nVerify: Order cost = 14.1\u00d750 = \u00a3707\nHold cost = (707/2)\u00d72 = \u00a3707\nThey match \u2713 (always equal at EOQ)"}]}
 ];
 
-const SEC_A=[
-{t:"NPV Calculation",l:[1],p:"Core",d:"Discount cash flows, sum, subtract I\u2080. Accept/reject."},
-{t:"IRR (Linear Interpolation)",l:[2],p:"Core",d:"Two rates giving +/\u2212 NPV, interpolate. Compare to k."},
-{t:"AER / Effective Annual Rate",l:[2],p:"Medium",d:"Convert nominal rate with m compounding periods to AER."},
-{t:"Bond Pricing",l:[4],p:"Core",d:"PV of coupon annuity + PV of face value. Par/premium/discount."},
-{t:"Portfolio Variance & SD",l:[5],p:"Core",d:"E(V), variance, \u03c3 for single assets and 2-asset portfolios."},
-{t:"Beta & CAPM (SML)",l:[6],p:"Core",d:"Covariance, beta from data, then expected return via SML."},
-{t:"WACC Calculation",l:[8],p:"Core",d:"Cost of each source \u00d7 market value weight. After-tax debt."},
-{t:"Perpetuity / Share Valuation",l:[3],p:"Core",d:"P = CF/r or CF\u2081/(r\u2212g). Solve for price, r, or g."},
-{t:"Option Profit (Call/Put)",l:[7],p:"Medium",d:"Exercise decision, payoff, subtract premium."},
-{t:"Futures Margin Account",l:[7],p:"Medium",d:"Daily mark-to-market table, margin calls, net P&L."},
-{t:"Cash Conversion Cycle",l:[10],p:"Medium",d:"DIO + DSO \u2212 DPO from financial statements."},
-{t:"EOQ",l:[10],p:"Easy",d:"\u221a(2DS/H) \u2014 identify D, S, H and compute."},
-{t:"Trade Credit Cost",l:[10],p:"Medium",d:"Annualise implicit cost of not taking discount."},
-{t:"Cost of Equity (DGM & CAPM)",l:[8,3],p:"Core",d:"Ke = D\u2081/P\u2080+g vs Ke = Rf+\u03b2(Rm\u2212Rf). Compare."}
+const SA=[
+{t:"NPV",l:[1],p:"Core",d:"Discount CFs, sum, subtract I0. Accept/reject."},
+{t:"IRR Interpolation",l:[2],p:"Core",d:"Two rates +/\u2212 NPV, interpolate, compare to k."},
+{t:"AER",l:[2],p:"Medium",d:"Nominal + compounding freq \u2192 AER."},
+{t:"Bond Pricing",l:[4],p:"Core",d:"Annuity+DF. Par/premium/discount."},
+{t:"Portfolio Var/SD",l:[5],p:"Core",d:"E(V), \u03c3\u00b2, \u03c3 for assets & portfolios."},
+{t:"Beta & CAPM",l:[6],p:"Core",d:"Cov, beta, SML expected return."},
+{t:"WACC",l:[8],p:"Core",d:"All costs + market weights. After-tax debt."},
+{t:"Perpetuity/Share",l:[3],p:"Core",d:"P=CF/r or CF1/(r\u2212g)."},
+{t:"Option Profit",l:[7],p:"Medium",d:"Exercise decision, payoff\u2212premium."},
+{t:"Futures Margin",l:[7],p:"Medium",d:"Mark-to-market, margin calls."},
+{t:"CCC",l:[10],p:"Medium",d:"DIO+DSO\u2212DPO from data."},
+{t:"EOQ",l:[10],p:"Easy",d:"\u221a(2DS/H)."},
+{t:"Trade Credit Cost",l:[10],p:"Medium",d:"Annualise skipped discount."},
+{t:"Cost of Equity",l:[8,3],p:"Core",d:"DGM vs CAPM, compare."}
 ];
 
-const SEC_B=[
-{t:"Efficient Market Hypothesis",l:[3],co:"#7d3c98",a:["Three forms: weak (tech analysis useless), semi-strong (fundamental analysis useless), strong (even insider info reflected)","Evidence FOR: event studies, random walk, fund managers can't consistently beat the index","Evidence AGAINST: anomalies (January, small-firm, momentum, value); bubbles","Behavioural finance: overreaction, herding, anchoring, overconfidence (Kahneman, Shiller)","Wisdom of crowds: Galton's ox, Ask the Audience (91% vs 65%)","If efficient \u2192 passive indexing > active management","Nuanced: broadly semi-strong efficient, but pockets of inefficiency exist"]},
-{t:"Investment Appraisal Methods",l:[1,2],co:"#1e8449",a:["NPV: theoretically superior \u2014 time value, all CFs, absolute value in monetary terms","IRR: intuitive % return but multiple IRRs, wrong ranking of mutually exclusive (ignores scale)","NPV vs IRR: usually agree on accept/reject but can rank differently \u2014 NPV preferred","Payback: simple, liquidity-focused, but ignores time value and CFs after cut-off","AAR: accounting figures, arbitrary depreciation \u2014 not a true return","In practice: firms use multiple methods; NPV is academic gold standard","Could mention: PI (NPV/Investment) for capital rationing"]},
-{t:"CAPM \u2014 Risk, Pricing & Limitations",l:[5,6,8],co:"#2471a3",a:["SML: E(R\u1d62) = Rf + \u03b2(Rm\u2212Rf) links return to systematic risk","Only systematic risk compensated \u2014 unsystematic diversified away","Assumptions: rational investors, efficient markets, single period, risk-free borrowing","Limitations: unstable \u03b2, Fama & French 3-factor, unrealistic assumptions","Advantages: simple, intuitive, focuses on relevant risk, industry standard for Ke","DGM comparison: DGM only for dividend-payers; CAPM models risk explicitly \u2192 generally superior","CAPM: 'worst model except for all the others' \u2014 imperfect but dominant"]},
-{t:"Capital Structure \u2014 MM & Trade-off",l:[8],co:"#6c3483",a:["MM 1958: VL = VU \u2014 pizza analogy \u2014 structure irrelevant","MM 1958 Prop II: cheap debt offset by riskier equity \u2192 WACC constant","MM 1963: tax shield \u2192 VL = VU + TD \u2192 more debt = more value","100% debt? Absurd \u2014 missing factor = financial distress costs","Distress: direct (legal) + indirect (lost customers, fire sales, employee flight)","Trade-off: optimal gearing where marginal tax benefit = marginal distress cost","Practice: moderate leverage, industry norms. Agency costs between shareholders and creditors."]},
-{t:"Dividend Policy \u2014 Theories & Practice",l:[9],co:"#d4ac0d",a:["MM Irrelevance: payout doesn't affect value (prove numerically!)","Bird-in-the-Hand (Gordon): prefer certain dividends \u2014 refuted (risk already in discount rate)","Tax Preference: CG taxed lower \u2192 low payout preferred","Signalling: costly to fake \u2192 credible information about future","Pecking Order: info asymmetry \u2192 internal capital cheapest (Akerlof's lemons)","Clientele Effect: different investors, different preferences","Lintner smoothing. Buybacks growing. Stock dividends/splits don't change value."]},
-{t:"Derivatives, Hedging & FX Risk",l:[7],co:"#117a65",a:["Forwards vs Futures: OTC vs exchange, customised vs standardised, counterparty risk vs clearing house","Options: asymmetric payoff \u2014 premium = max loss for buyer","Swaps: transform exposure (fixed \u2194 floating)","Hedging reduces uncertainty but foregoes upside \u2014 zero-sum","Three FX risks: Transaction, Translation, Economic","External: currency forwards/futures/options/swaps. Internal: leading/lagging, netting, FX borrowing","Theories: PPP (inflation), IRP (interest rates), BOP (trade flows)"]},
-{t:"Working Capital Management",l:[10],co:"#a04000",a:["Trade-off: liquidity vs profitability","CCC: shorter = less financing needed. Negative = suppliers finance you.","Aggressive (high-\u03b2): low inventory, tight credit \u2192 high return, high risk","Conservative (bonds): high buffers \u2192 safe but expensive","EOQ: balances ordering and carrying costs","JIT: brilliant until supply chain breaks (COVID)","Financing: maturity matching vs aggressive vs conservative"]}
+const SB=[
+{t:"EMH",l:[3],co:"#7d3c98",a:["Weak/semi-strong/strong forms","Event studies, random walk (FOR)","Anomalies, bubbles, behavioural (AGAINST)","Galton, Ask the Audience","Passive > active if efficient","Broadly semi-strong, pockets of inefficiency"]},
+{t:"Investment Appraisal",l:[1,2],co:"#1e8449",a:["NPV: superior, absolute value","IRR: % but multiple/scale problems","Payback: simple, ignores TVM","AAR: accounting not CF","NPV is king when conflict"]},
+{t:"CAPM",l:[5,6],co:"#2471a3",a:["SML: E(R)=Rf+\u03b2(Rm\u2212Rf)","Only systematic risk compensated","Fama & French critique","CAPM vs DGM","Industry standard despite flaws"]},
+{t:"Capital Structure (MM)",l:[8],co:"#6c3483",a:["MM58: pizza analogy","MM63: tax shield VL=VU+TD","100% debt? \u2192 distress","Trade-off theory","Gearing increases EK volatility"]},
+{t:"Dividend Policy",l:[9],co:"#d4ac0d",a:["MM irrelevance (prove it!)","Bird-in-hand, Tax, Signalling","Pecking order (Akerlof)","Clientele, Lintner smoothing","Buybacks"]},
+{t:"Derivatives & FX",l:[7],co:"#117a65",a:["Forwards vs Futures table","Options asymmetry","Swaps transform exposure","3 FX risks + hedging","PPP, IRP theories"]},
+{t:"WCM",l:[10],co:"#a04000",a:["Liquidity vs profitability","CCC metric","Aggressive vs conservative","EOQ, JIT","Financing strategies"]}
 ];
 
-const CL=[
-{c:"Section A \u2014 Calculation Skills",i:["Compute NPV for 5+ year project and state accept/reject","Find IRR via linear interpolation and interpret against cost of capital","Convert between nominal rates and AER for various compounding frequencies","Price a bond using both individual discounting AND annuity method","Explain par/premium/discount relationship","Calculate E(V), variance and SD from a probability distribution","Compute portfolio variance for 2-asset portfolio (with and without correlation)","Calculate covariance and beta from return data","Use CAPM/SML for expected return given Rf, \u03b2 and Rm","Calculate WACC with all components (after-tax Kd, Kps, Kos, market weights)","Compute Ke via both DGM and CAPM and compare","Determine option profit for calls and puts","Track futures margin account with daily mark-to-market","Calculate DIO, DSO, DPO, OC and CCC","Compute EOQ and annualised cost of trade credit"]},
-{c:"Section B \u2014 Essay Knowledge",i:["Critically evaluate EMH (three forms, evidence, anomalies, behavioural finance)","Compare NPV/IRR/Payback/AAR (advantages, disadvantages, conflicts)","Discuss CAPM: assumptions, limitations (Fama & French), DGM comparison","Explain MM 1958 and 1963 (Props I & II, pizza analogy)","Discuss Trade-off theory (tax shield vs financial distress)","Evaluate dividend theories (MM, Bird-in-hand, Signalling, Pecking Order, Clientele)","Explain derivatives (forwards vs futures, options, swaps) and hedging","Discuss FX risk (3 types) and hedging (internal/external)","Analyse WCM (aggressive vs conservative, CCC, EOQ, JIT, financing)"]}
+const CK=[
+{c:"Section A",i:["NPV for 5+ yr project","IRR interpolation","AER conversions","Bond pricing (both methods)","Par/premium/discount logic","E(V), variance, SD","Portfolio variance","Covariance and beta","CAPM/SML return","Full WACC","Ke via DGM and CAPM","Option profit","Futures margin","DIO/DSO/DPO/CCC","EOQ + trade credit cost"]},
+{c:"Section B",i:["EMH essay","NPV vs IRR vs Payback","CAPM + limitations","MM propositions","Trade-off theory","Dividend theories","Derivatives & hedging","FX risk & strategies","WCM policies"]}
 ];
 
-// STATE
-let cv='overview',ff='all',cs={};
-try{cs=JSON.parse(localStorage.getItem('c31fc_ck')||'{}')}catch(e){}
+// ══════════ STATE ══════════
+let V='ov',LI=null,FF='all',CKS={};
+try{CKS=JSON.parse(localStorage.getItem('c31fc')||'{}')}catch(e){}
 
-function showView(n,lid){
-  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
-  const tabs=document.querySelectorAll('.nav-tab');
-  const m={overview:0,formulas:1,sectionA:2,sectionB:3,checklist:4};
-  if(m[n]!==undefined)tabs[m[n]].classList.add('active');
-  ['overview','lecture','formulas','sectionA','sectionB','checklist'].forEach(v=>{document.getElementById('v-'+v).hidden=(v!==n)});
-  cv=n;
-  if(n==='lecture'&&lid)rL(lid);if(n==='formulas')rF();if(n==='sectionA')rA();if(n==='sectionB')rB();if(n==='checklist')rC();
+function go(v,id){
+  V=v; if(id)LI=id;
+  document.querySelectorAll('.tab').forEach((t,i)=>{
+    const m={ov:0,fm:1,sa:2,sb:3,pr:4,cl:5};
+    t.classList.toggle('on',m[v]===i||(v==='lec'&&i===0));
+  });
+  render();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function rO(){document.getElementById('og').innerHTML=L.map(l=>`<div class="card" onclick="showView('lecture',${l.id})"><div class="card-bar" style="background:${l.color}"></div><div class="card-head"><div class="card-ico">${l.icon}</div><div><div class="card-lbl">Lecture ${l.id} \u00b7 ${l.chapter}</div><div class="card-ttl">${l.title}</div></div></div><div class="card-desc">${l.kp.slice(0,3).join(' \u00b7 ')}</div></div>`).join('')}
+function toggle(el){el.classList.toggle('open')}
 
-function rL(id){
-  const l=L.find(x=>x.id===id);const tf=l.tf.split('\n\n').map(p=>`<p>${p}</p>`).join('');
-  document.getElementById('v-lecture').innerHTML=`
-    <button class="back-btn" onclick="showView('overview')">\u2190 Back to Overview</button>
-    <div class="detail-banner" style="background:linear-gradient(135deg,${l.color},${l.color}99)"><div class="tag">LECTURE ${l.id} \u00b7 ${l.chapter.toUpperCase()}</div><h1>${l.icon} ${l.title}</h1></div>
-    <h2 class="sec-title">\ud83d\udccc Key Concepts</h2><ul class="kp-list">${l.kp.map(p=>`<li style="border-color:${l.color}">${p}</li>`).join('')}</ul>
-    <h2 class="sec-title">\ud83d\udcd0 Formulas</h2><div class="f-grid">${l.fm.map(f=>`<div class="f-card"><div class="f-label">${f.n}</div><div class="f-eq">${f.eq}</div><div class="f-ctx">${f.c||''}</div></div>`).join('')}</div>
-    <h2 class="sec-title">\ud83d\udd0d Deep Dive</h2><div class="context"><p>${l.dd}</p></div>
-    <h2 class="sec-title">\ud83e\udde0 Ways of Thinking About This</h2><div class="tip think"><h4>Mental Models & Exam Strategies</h4>${tf}</div>
-    <div class="tip calc"><h4>\ud83d\udcdd Calculation Tips (Section A)</h4><p>${l.ct}</p></div>
-    <div class="tip essay"><h4>\ud83d\udcd6 Essay Relevance (Section B)</h4><p>${l.el}</p></div>`;
+function toggleCk(k){
+  CKS[k]=!CKS[k];
+  try{localStorage.setItem('c31fc',JSON.stringify(CKS))}catch(e){}
+  render();
 }
 
-function rF(){
-  const all=L.flatMap(l=>l.fm.map(f=>({...f,lid:l.id,lt:l.title,ch:l.chapter,co:l.color})));
-  const fil=ff==='all'?all:all.filter(f=>f.lid===parseInt(ff));
-  document.getElementById('v-formulas').innerHTML=`<div class="hero"><h1>Formula Sheet</h1><p>Every formula from all 10 lectures \u2014 with chapter context and usage notes</p></div>
-    <div class="fw-filters"><button class="fw-btn ${ff==='all'?'on':''}" onclick="sFF('all')">All (${all.length})</button>${L.map(l=>`<button class="fw-btn ${ff===String(l.id)?'on':''}" onclick="sFF('${l.id}')">${l.icon} L${l.id}</button>`).join('')}</div>
-    <div class="fw-grid">${fil.map(f=>`<div class="fw-card" onclick="showView('lecture',${f.lid})"><div class="fw-chap">L${f.lid} \u00b7 ${f.ch}</div><div class="fw-ctx">${f.c||''}</div><div class="fw-name">${f.n}</div><div class="fw-eq" style="color:${f.co}">${f.eq}</div></div>`).join('')}</div>`;
-}
-function sFF(v){ff=v;rF()}
-
-function rA(){
-  const pc={Core:'b-core',Medium:'b-medium',Easy:'b-easy'};
-  document.getElementById('v-sectionA').innerHTML=`<div class="hero"><h1>Section A \u2014 Calculations</h1><p>3 questions, answer ALL. Show full workings and state decision rules explicitly.</p></div>
-    <div class="tip warn"><h4>\ud83c\udfaf General Exam Tips</h4><ul><li>Set up tables: Year | CF | DF | PV</li><li>Always write the decision rule explicitly</li><li>Show ALL intermediate steps \u2014 partial marks for workings</li><li>Sanity-check: bond with coupon > YTM must trade at premium</li><li>Only round in the final step</li><li>If stuck, write the formula and define every variable \u2014 partial marks</li></ul></div>
-    <h2 class="sec-title">Likely Calculation Topics</h2>
-    <table class="tbl"><thead><tr><th>Topic</th><th>Lecture</th><th>Priority</th><th>What You Need to Do</th></tr></thead><tbody>${SEC_A.map(t=>`<tr><td style="font-weight:600;color:#e0e0e0">${t.t}</td><td>${t.l.map(x=>`<span style="cursor:pointer;color:#60a5fa" onclick="showView('lecture',${x})">L${x}</span>`).join(', ')}</td><td><span class="badge ${pc[t.p]}">${t.p}</span></td><td>${t.d}</td></tr>`).join('')}</tbody></table>
-    <div class="tip info"><h4>\ud83d\udd25 Most Likely Combinations</h4><p>Section A will likely include: one NPV/IRR question, one bond or CAPM/beta calculation, and one from WACC, portfolio, or working capital. Master all 'Core' topics first.</p></div>`;
-}
-
-function rB(){
-  document.getElementById('v-sectionB').innerHTML=`<div class="hero"><h1>Section B \u2014 Essays</h1><p>3 questions, choose any TWO. CW1 had EMH, valuation, subprime, CAPM \u2014 CW2 will differ.</p></div>
-    <div class="tip essay"><h4>\u270d\ufe0f Essay Structure</h4><ul><li><strong>Introduction:</strong> Define key terms, state direction</li><li><strong>Main body:</strong> Theory \u2192 evidence/examples \u2192 critical evaluation</li><li><strong>Conclusion:</strong> Balanced position, acknowledge counter-arguments</li><li>Named references: Fama & French (1992), Lintner (1956), MM (1958/1963), Gordon (1959), Markowitz (1952)</li><li>Show analytical depth \u2014 evaluate and compare, don't just describe</li></ul></div>
-    <h2 class="sec-title">Possible Essay Topics \u2014 click to expand</h2>
-    ${SEC_B.map((t,i)=>`<div class="essay" id="e-${i}" onclick="tE(${i})"><div class="essay-head"><div class="essay-dot" style="background:${t.co}"></div><div class="essay-title">${t.t}</div><div class="essay-lec">${t.l.map(x=>'L'+x).join(', ')}</div><div class="essay-chevron">\u25bc</div></div><div class="essay-body"><ul>${t.a.map(a=>`<li>${a}</li>`).join('')}</ul></div></div>`).join('')}`;
-}
-function tE(i){document.getElementById('e-'+i).classList.toggle('open')}
-
-function rC(){
-  const tot=CL.reduce((a,c)=>a+c.i.length,0);const dn=Object.values(cs).filter(Boolean).length;const pct=tot>0?Math.round(dn/tot*100):0;
-  document.getElementById('v-checklist').innerHTML=`<div class="hero"><h1>Progress Checklist</h1><p>Tick off each skill as you master it \u00b7 ${dn}/${tot} complete</p></div>
-    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-    ${CL.map((cat,ci)=>`<h2 class="sec-title">${cat.c}</h2><div>${cat.i.map((item,ii)=>{const k=ci+'-'+ii,d=cs[k];return`<div class="cl-item" onclick="tC('${k}')"><div class="cl-box ${d?'done':''}">&#10003;</div><span class="cl-txt ${d?'done':''}">${item}</span></div>`}).join('')}</div>`).join('')}`;
-}
-function tC(k){cs[k]=!cs[k];try{localStorage.setItem('c31fc_ck',JSON.stringify(cs))}catch(e){}rC()}
-
-rO();
-
-// ═══════════════════════════════════════════════════════
-// PRACTICE QUESTIONS WITH WORKED SOLUTIONS
-// ═══════════════════════════════════════════════════════
-
-const PQ = [
-{cat:"NPV & IRR",icon:"\u23f3",color:"#1a5276",questions:[
-{q:"A company is considering a project costing \u00a3200,000. Expected cash flows: Year 1: \u00a360,000, Year 2: \u00a370,000, Year 3: \u00a380,000, Year 4: \u00a390,000. The cost of capital is 12%. Calculate the NPV and advise whether the project should be accepted.",
-sol:`<strong>Step 1: Calculate discount factors at 12%</strong>
-Year 1: DF = 1/(1.12)\u00b9 = 0.8929
-Year 2: DF = 1/(1.12)\u00b2 = 0.7972
-Year 3: DF = 1/(1.12)\u00b3 = 0.7118
-Year 4: DF = 1/(1.12)\u2074 = 0.6355
-
-<strong>Step 2: Calculate present values</strong>
-Year 0: \u2212\u00a3200,000 \u00d7 1.0000 = \u2212\u00a3200,000
-Year 1: \u00a360,000 \u00d7 0.8929 = \u00a353,574
-Year 2: \u00a370,000 \u00d7 0.7972 = \u00a355,804
-Year 3: \u00a380,000 \u00d7 0.7118 = \u00a356,944
-Year 4: \u00a390,000 \u00d7 0.6355 = \u00a357,195
-
-<strong>Step 3: Sum all present values</strong>
-NPV = \u2212200,000 + 53,574 + 55,804 + 56,944 + 57,195
-NPV = +\u00a323,517
-
-<strong>Decision:</strong> Since NPV > 0, the project should be <strong>accepted</strong>. It creates \u00a323,517 of value above the required 12% return.`},
-
-{q:"Using the same project above (\u00a3200,000 investment, CFs of 60k, 70k, 80k, 90k), the NPV at 12% is +\u00a323,517 and the NPV at 20% is \u2212\u00a312,208. Estimate the IRR using linear interpolation and advise on the project if the cost of capital is 15%.",
-sol:`<strong>Step 1: Identify the two data points</strong>
-At r\u2081 = 12%: NPV\u2081 = +\u00a323,517 (positive)
-At r\u2082 = 20%: NPV\u2082 = \u2212\u00a312,208 (negative)
-
-<strong>Step 2: Apply the interpolation formula</strong>
-IRR = r\u208a + [NPV\u208a / (NPV\u208a \u2212 NPV\u208b)] \u00d7 (r\u208b \u2212 r\u208a)
-
-IRR = 12% + [23,517 / (23,517 \u2212 (\u221212,208))] \u00d7 (20% \u2212 12%)
-IRR = 12% + [23,517 / 35,725] \u00d7 8%
-IRR = 12% + 0.6584 \u00d7 8%
-IRR = 12% + 5.27%
-IRR = <strong>17.27%</strong>
-
-<strong>Decision:</strong> Since IRR (17.27%) > cost of capital (15%), the project should be <strong>accepted</strong>. The project's return exceeds the minimum required return.
-
-<strong>Note:</strong> The IRR and NPV methods agree here \u2014 both say accept. This is typical for conventional, independent projects.`}
-]},
-
-{cat:"AER & Compounding",icon:"\ud83d\udcca",color:"#1e8449",questions:[
-{q:"A bank offers a savings account with a nominal (quoted) rate of 8% per annum, compounded quarterly. What is the Annual Equivalent Rate (AER)?",
-sol:`<strong>Formula:</strong> AER = (1 + r/m)\u1d50 \u2212 1
-
-Where:
-r = nominal rate = 0.08
-m = compounding frequency = 4 (quarterly)
-
-<strong>Calculation:</strong>
-AER = (1 + 0.08/4)\u2074 \u2212 1
-AER = (1 + 0.02)\u2074 \u2212 1
-AER = (1.02)\u2074 \u2212 1
-AER = 1.08243 \u2212 1
-AER = <strong>0.08243 = 8.24%</strong>
-
-<strong>Interpretation:</strong> Although the quoted rate is 8%, the effective annual rate is 8.24% because interest is compounded four times per year. Each quarter, interest is earned on previously accumulated interest.
-
-<strong>Key insight:</strong> The more frequent the compounding, the higher the AER. Daily compounding at 8% nominal would give AER = (1 + 0.08/365)\u00b3\u2076\u2075 \u2212 1 = 8.33%.`},
-
-{q:"You invest \u00a31,000 and receive \u00a31,350 after 4 years. What is your annualised (geometric average) rate of return? How long would it take to double your money at this rate?",
-sol:`<strong>Part 1: Geometric average return</strong>
-Formula: r = (FV/PV)^(1/n) \u2212 1
-
-r = (1,350/1,000)^(1/4) \u2212 1
-r = (1.35)^(0.25) \u2212 1
-r = 1.0778 \u2212 1
-r = <strong>0.0778 = 7.78% per annum</strong>
-
-<strong>Why not simple average?</strong> Total return = 35% over 4 years. Simple average = 35%/4 = 8.75%. But this overstates the true rate because it ignores the compounding effect. The geometric average (7.78%) is the correct annualised return.
-
-<strong>Part 2: Doubling time</strong>
-Formula: n = log(2) / log(1 + r)
-
-n = log(2) / log(1.0778)
-n = 0.6931 / 0.0749
-n = <strong>9.25 years</strong>
-
-<strong>Quick check (Rule of 72):</strong> 72 / 7.78 \u2248 9.3 years. Matches our calculation.`}
-]},
-
-{cat:"Bond Pricing",icon:"\ud83d\udcdc",color:"#b9770e",questions:[
-{q:"A corporate bond has a face value of \u00a31,000, a coupon rate of 6% paid annually, and 5 years to maturity. If the current yield to maturity (YTM) is 8%, calculate the bond's price. Is the bond trading at par, premium, or discount?",
-sol:`<strong>Step 1: Identify the cash flows</strong>
-Annual coupon = 6% \u00d7 \u00a31,000 = \u00a360
-Face value at maturity = \u00a31,000
-YTM = 8%, n = 5 years
-
-<strong>Method 1: Individual discounting</strong>
-Year 1: \u00a360 / (1.08)\u00b9 = \u00a360 / 1.0800 = \u00a355.56
-Year 2: \u00a360 / (1.08)\u00b2 = \u00a360 / 1.1664 = \u00a351.44
-Year 3: \u00a360 / (1.08)\u00b3 = \u00a360 / 1.2597 = \u00a347.63
-Year 4: \u00a360 / (1.08)\u2074 = \u00a360 / 1.3605 = \u00a344.10
-Year 5: \u00a360 / (1.08)\u2075 = \u00a360 / 1.4693 = \u00a340.83
-Year 5 (FV): \u00a31,000 / (1.08)\u2075 = \u00a31,000 / 1.4693 = \u00a3680.58
-
-Bond Price = 55.56 + 51.44 + 47.63 + 44.10 + 40.83 + 680.58 = <strong>\u00a3920.15</strong>
-
-<strong>Method 2: Annuity method (faster)</strong>
-AF(8%, 5) = [1 \u2212 1/(1.08)\u2075] / 0.08 = [1 \u2212 0.6806] / 0.08 = 3.9927
-DF(8%, 5) = 1/(1.08)\u2075 = 0.6806
-
-Price = \u00a360 \u00d7 3.9927 + \u00a31,000 \u00d7 0.6806
-Price = 239.56 + 680.58
-Price = <strong>\u00a3920.15</strong> \u2714 (same answer)
-
-<strong>The bond trades at a DISCOUNT</strong> because the coupon rate (6%) < YTM (8%). Investors demand 8% but the bond only pays 6% in coupons, so the price must fall below face value to compensate.`},
-
-{q:"If the YTM on the same bond (6% coupon, 5yr, \u00a31,000 FV) falls to 4%, what is the new price? What does this tell you about the relationship between bond prices and interest rates?",
-sol:`<strong>Using annuity method at 4%:</strong>
-AF(4%, 5) = [1 \u2212 1/(1.04)\u2075] / 0.04 = [1 \u2212 0.8219] / 0.04 = 4.4518
-DF(4%, 5) = 1/(1.04)\u2075 = 0.8219
-
-Price = \u00a360 \u00d7 4.4518 + \u00a31,000 \u00d7 0.8219
-Price = 267.11 + 821.93
-Price = <strong>\u00a31,089.04</strong>
-
-<strong>The bond now trades at a PREMIUM</strong> because coupon rate (6%) > YTM (4%).
-
-<strong>Summary of the inverse relationship:</strong>
-\u2022 At YTM = 8%: Price = \u00a3920.15 (discount)
-\u2022 At YTM = 6%: Price = \u00a31,000.00 (par)
-\u2022 At YTM = 4%: Price = \u00a31,089.04 (premium)
-
-As YTM falls, price rises. As YTM rises, price falls. This is the fundamental inverse relationship between bond prices and interest rates \u2014 the 'seesaw' effect.`}
-]},
-
-{cat:"Portfolio Risk & CAPM",icon:"\u03b2",color:"#2471a3",questions:[
-{q:"Consider the following probability distribution of returns for Stock X:\n\nBoom (P=0.3): Return = 20%\nNormal (P=0.5): Return = 10%\nRecession (P=0.2): Return = \u22125%\n\nCalculate: (a) Expected return, (b) Variance, (c) Standard deviation.",
-sol:`<strong>(a) Expected Return</strong>
-E(R) = \u03a3 R\u1d62 \u00d7 P\u1d62
-E(R) = (0.20 \u00d7 0.3) + (0.10 \u00d7 0.5) + (\u22120.05 \u00d7 0.2)
-E(R) = 0.06 + 0.05 + (\u22120.01)
-E(R) = <strong>0.10 = 10%</strong>
-
-<strong>(b) Variance</strong>
-\u03c3\u00b2 = \u03a3 P\u1d62 \u00d7 (R\u1d62 \u2212 E(R))\u00b2
-
-Boom:    0.3 \u00d7 (0.20 \u2212 0.10)\u00b2 = 0.3 \u00d7 (0.10)\u00b2 = 0.3 \u00d7 0.01 = 0.0030
-Normal:  0.5 \u00d7 (0.10 \u2212 0.10)\u00b2 = 0.5 \u00d7 (0.00)\u00b2 = 0.5 \u00d7 0.00 = 0.0000
-Recess:  0.2 \u00d7 (\u22120.05 \u2212 0.10)\u00b2 = 0.2 \u00d7 (\u22120.15)\u00b2 = 0.2 \u00d7 0.0225 = 0.0045
-
-\u03c3\u00b2 = 0.0030 + 0.0000 + 0.0045 = <strong>0.0075</strong>
-
-<strong>(c) Standard Deviation</strong>
-\u03c3 = \u221a0.0075 = <strong>0.0866 = 8.66%</strong>
-
-<strong>Interpretation:</strong> The stock has an expected return of 10% with a risk (standard deviation) of 8.66%. A risk-averse investor would only hold this stock if the 10% expected return adequately compensates for the 8.66% volatility.`},
-
-{q:"The risk-free rate is 3% and the expected market return is 11%. Stock A has a beta of 1.4 and Stock B has a beta of 0.7. (a) Calculate the expected return for each stock using CAPM. (b) If Stock A is currently yielding 14%, is it undervalued or overvalued? (c) What is the market risk premium?",
-sol:`<strong>(a) Expected returns using the SML</strong>
-E(R\u1d62) = Rf + \u03b2\u1d62(E(Rm) \u2212 Rf)
-
-<strong>Stock A (\u03b2 = 1.4):</strong>
-E(R\u2090) = 3% + 1.4 \u00d7 (11% \u2212 3%)
-E(R\u2090) = 3% + 1.4 \u00d7 8%
-E(R\u2090) = 3% + 11.2%
-E(R\u2090) = <strong>14.2%</strong>
-
-<strong>Stock B (\u03b2 = 0.7):</strong>
-E(R\u1d47) = 3% + 0.7 \u00d7 (11% \u2212 3%)
-E(R\u1d47) = 3% + 0.7 \u00d7 8%
-E(R\u1d47) = 3% + 5.6%
-E(R\u1d47) = <strong>8.6%</strong>
-
-<strong>(b) Stock A valuation</strong>
-CAPM says Stock A should yield 14.2%. It's actually yielding 14%.
-Since actual return (14%) < required return (14.2%), Stock A sits <strong>below the SML</strong> and is therefore <strong>overvalued</strong>. It's not giving enough return for its level of risk.
-
-<strong>(c) Market Risk Premium</strong>
-MRP = E(Rm) \u2212 Rf = 11% \u2212 3% = <strong>8%</strong>
-
-This is the extra return the market as a whole demands over the risk-free rate for bearing systematic risk.`},
-
-{q:"You have two stocks with zero correlation:\n\u2022 Stock P: E(R) = 12%, \u03c3 = 20%\n\u2022 Stock Q: E(R) = 8%, \u03c3 = 10%\n\nCalculate the portfolio return and risk for a 50/50 portfolio. Compare the portfolio risk to the weighted average of individual risks.",
-sol:`<strong>Portfolio Return (always a weighted average):</strong>
-E(R\u209a) = w\u2081E(R\u2081) + w\u2082E(R\u2082)
-E(R\u209a) = 0.5 \u00d7 12% + 0.5 \u00d7 8%
-E(R\u209a) = 6% + 4% = <strong>10%</strong>
-
-<strong>Portfolio Variance (with \u03c1 = 0):</strong>
-\u03c3\u00b2\u209a = w\u2081\u00b2\u03c3\u2081\u00b2 + w\u2082\u00b2\u03c3\u2082\u00b2 + 2w\u2081w\u2082\u03c3\u2081\u03c3\u2082\u03c1
-                                          \u2191 this term = 0 because \u03c1 = 0
-
-\u03c3\u00b2\u209a = (0.5)\u00b2 \u00d7 (0.20)\u00b2 + (0.5)\u00b2 \u00d7 (0.10)\u00b2
-\u03c3\u00b2\u209a = 0.25 \u00d7 0.04 + 0.25 \u00d7 0.01
-\u03c3\u00b2\u209a = 0.01 + 0.0025
-\u03c3\u00b2\u209a = 0.0125
-
-<strong>Portfolio Standard Deviation:</strong>
-\u03c3\u209a = \u221a0.0125 = <strong>11.18%</strong>
-
-<strong>Comparison \u2014 the diversification benefit:</strong>
-\u2022 Weighted average risk = 0.5 \u00d7 20% + 0.5 \u00d7 10% = 15%
-\u2022 Actual portfolio risk = 11.18%
-\u2022 Risk reduction = 15% \u2212 11.18% = <strong>3.82 percentage points</strong>
-
-The portfolio earns 10% return with only 11.18% risk, compared to 15% if there were no diversification benefit. This is the power of diversification \u2014 same return but lower risk, purely because the two stocks have zero correlation.`}
-]},
-
-{cat:"WACC",icon:"\ud83c\udfd7\ufe0f",color:"#6c3483",questions:[
-{q:"A company has the following capital structure (at market values):\n\u2022 Ordinary shares: \u00a36 million\n\u2022 Preference shares: \u00a31.5 million\n\u2022 Bonds: \u00a32.5 million\n\nAdditional information:\n\u2022 Equity beta = 1.2, Risk-free rate = 4%, Market return = 12%\n\u2022 Preference shares pay a dividend of \u00a30.80 and trade at \u00a310\n\u2022 Bonds have a YTM of 6%\n\u2022 Corporate tax rate = 25%\n\nCalculate the WACC.",
-sol:`<strong>Step 1: Cost of each source</strong>
-
-<strong>Cost of Ordinary Shares (using CAPM):</strong>
-Kos = Rf + \u03b2(Rm \u2212 Rf)
-Kos = 4% + 1.2 \u00d7 (12% \u2212 4%)
-Kos = 4% + 1.2 \u00d7 8%
-Kos = 4% + 9.6% = <strong>13.6%</strong>
-
-<strong>Cost of Preference Shares:</strong>
-Kps = Div / P\u2080
-Kps = \u00a30.80 / \u00a310 = <strong>8%</strong>
-
-<strong>Cost of Debt (after tax):</strong>
-Kdt = Kd \u00d7 (1 \u2212 T)
-Kdt = 6% \u00d7 (1 \u2212 0.25)
-Kdt = 6% \u00d7 0.75 = <strong>4.5%</strong>
-
-<strong>Step 2: Calculate market value weights</strong>
-Total value V = 6 + 1.5 + 2.5 = \u00a310 million
-
-Wos = 6/10 = 0.60
-Wps = 1.5/10 = 0.15
-Wd = 2.5/10 = 0.25
-
-<strong>Step 3: Calculate WACC</strong>
-WACC = Kdt \u00d7 Wd + Kps \u00d7 Wps + Kos \u00d7 Wos
-WACC = 4.5% \u00d7 0.25 + 8% \u00d7 0.15 + 13.6% \u00d7 0.60
-WACC = 1.125% + 1.20% + 8.16%
-WACC = <strong>10.49%</strong>
-
-<strong>Interpretation:</strong> The firm must earn at least 10.49% on its investments to satisfy all capital providers. Any project with IRR < 10.49% (or NPV < 0 when discounted at 10.49%) should be rejected.
-
-<strong>Common mistakes to avoid:</strong>
-\u2022 Forgetting to use AFTER-tax cost of debt (not 6%, but 4.5%)
-\u2022 Using book values instead of market values for weights
-\u2022 Adding tax adjustment to preference shares (only debt interest is tax-deductible)`}
-]},
-
-{cat:"Options & Futures",icon:"\ud83c\udf10",color:"#117a65",questions:[
-{q:"You buy a European call option on a stock with an exercise price of \u00a350 and a premium of \u00a34. Calculate your profit/loss if the stock price at maturity is: (a) \u00a360, (b) \u00a352, (c) \u00a345.",
-sol:`<strong>Call option profit formula:</strong> Profit = max(S \u2212 E, 0) \u2212 Premium
-
-<strong>(a) Stock price = \u00a360</strong>
-Payoff = max(60 \u2212 50, 0) = \u00a310
-Profit = 10 \u2212 4 = <strong>+\u00a36 (profit)</strong>
-Exercise? <strong>Yes</strong> \u2014 you buy at \u00a350 what's worth \u00a360.
-
-<strong>(b) Stock price = \u00a352</strong>
-Payoff = max(52 \u2212 50, 0) = \u00a32
-Profit = 2 \u2212 4 = <strong>\u2212\u00a32 (loss)</strong>
-Exercise? <strong>Yes</strong> \u2014 the payoff (\u00a32) partially offsets the premium (\u00a34). Better to exercise and lose \u00a32 than not exercise and lose \u00a34.
-
-<strong>(c) Stock price = \u00a345</strong>
-Payoff = max(45 \u2212 50, 0) = \u00a30
-Profit = 0 \u2212 4 = <strong>\u2212\u00a34 (loss)</strong>
-Exercise? <strong>No</strong> \u2014 why buy at \u00a350 when market price is \u00a345? Let the option expire. Maximum loss = premium paid.
-
-<strong>Key insight:</strong> The break-even point is \u00a354 (exercise price + premium). The buyer's maximum loss is always limited to the premium (\u00a34), but upside is unlimited.`},
-
-{q:"A trader goes long on 5 futures contracts at \u00a3500 each. Initial margin is \u00a3100 per contract (\u00a3500 total). Maintenance margin is \u00a375 per contract (\u00a3375 total). Track the margin account:\n\nDay 2: price = \u00a3490\nDay 3: price = \u00a3470\nDay 4: price = \u00a3485\nDay 5: price = \u00a3510",
-sol:`<strong>Tracking the margin account (5 contracts):</strong>
-
-<strong>Day 1 (entry):</strong> Price = \u00a3500, Balance = \u00a3500 (initial margin)
-
-<strong>Day 2:</strong> Price = \u00a3490
-Daily P&L = (490 \u2212 500) \u00d7 5 = \u2212\u00a350
-Balance = 500 \u2212 50 = <strong>\u00a3450</strong>
-Margin call? No (\u00a3450 > \u00a3375 maintenance)
-
-<strong>Day 3:</strong> Price = \u00a3470
-Daily P&L = (470 \u2212 490) \u00d7 5 = \u2212\u00a3100
-Balance = 450 \u2212 100 = <strong>\u00a3350</strong>
-Margin call? <strong>YES</strong> (\u00a3350 < \u00a3375 maintenance)
-Top up: \u00a3500 \u2212 \u00a3350 = +\u00a3150 deposited
-New balance = <strong>\u00a3500</strong>
-
-<strong>Day 4:</strong> Price = \u00a3485
-Daily P&L = (485 \u2212 470) \u00d7 5 = +\u00a375
-Balance = 500 + 75 = <strong>\u00a3575</strong>
-Margin call? No
-
-<strong>Day 5:</strong> Price = \u00a3510
-Daily P&L = (510 \u2212 485) \u00d7 5 = +\u00a3125
-Balance = 575 + 125 = <strong>\u00a3700</strong>
-Margin call? No
-
-<strong>Net P&L:</strong> (510 \u2212 500) \u00d7 5 = +\u00a350 profit
-But the trader had to deposit \u00a3150 extra on Day 3 (margin call), so total cash committed = \u00a3500 + \u00a3150 = \u00a3650. Final balance = \u00a3700.
-
-<strong>Key point:</strong> The margin call on Day 3 didn't change the net profit \u2014 it just required additional cash to keep the position open.`}
-]},
-
-{cat:"Working Capital",icon:"\ud83d\udd04",color:"#a04000",questions:[
-{q:"From a company's financial statements:\n\u2022 Revenue: \u00a3800,000\n\u2022 Cost of goods sold: \u00a3500,000\n\u2022 Inventory: \u00a330,000\n\u2022 Accounts receivable: \u00a360,000\n\u2022 Accounts payable: \u00a340,000\n\nCalculate: (a) DIO, (b) DSO, (c) DPO, (d) Operating Cycle, (e) Cash Conversion Cycle. Interpret the result.",
-sol:`<strong>(a) Days Inventory Outstanding</strong>
-DIO = (Inventory / COGS) \u00d7 365
-DIO = (30,000 / 500,000) \u00d7 365
-DIO = 0.06 \u00d7 365 = <strong>21.9 days</strong>
-
-<strong>(b) Days Sales Outstanding</strong>
-DSO = (Receivables / Revenue) \u00d7 365
-DSO = (60,000 / 800,000) \u00d7 365
-DSO = 0.075 \u00d7 365 = <strong>27.4 days</strong>
-
-<strong>(c) Days Payable Outstanding</strong>
-DPO = (Payables / COGS) \u00d7 365
-DPO = (40,000 / 500,000) \u00d7 365
-DPO = 0.08 \u00d7 365 = <strong>29.2 days</strong>
-
-<strong>(d) Operating Cycle</strong>
-OC = DIO + DSO = 21.9 + 27.4 = <strong>49.3 days</strong>
-
-<strong>(e) Cash Conversion Cycle</strong>
-CCC = DIO + DSO \u2212 DPO = 21.9 + 27.4 \u2212 29.2 = <strong>20.1 days</strong>
-
-<strong>Interpretation:</strong> The company takes about 22 days to sell inventory, then 27 days to collect from customers, but delays payment to suppliers by 29 days. The net result is a 20-day 'cash gap' between paying suppliers and receiving cash \u2014 this gap must be financed (e.g., by overdraft or working capital facility).
-
-<strong>To improve:</strong> Reduce DIO (lean inventory), reduce DSO (chase payments faster), increase DPO (negotiate longer payment terms with suppliers).`},
-
-{q:"A supplier offers credit terms of 2/10, net 30. (a) What is the annualised cost of NOT taking the discount? (b) Should the firm take the discount if its bank overdraft rate is 15%?",
-sol:`<strong>(a) Annualised cost of trade credit</strong>
-Terms: 2/10, net 30 = 2% discount if paid within 10 days, otherwise full payment due in 30 days.
-
-By not taking the discount, the firm is effectively borrowing 98% of the invoice for an extra 20 days (30 \u2212 10) at a cost of 2%.
-
-Formula: Cost = [d / (1 \u2212 d)]^(365 / (full \u2212 disc)) \u2212 1
-
-Cost = [0.02 / (1 \u2212 0.02)]^(365 / (30 \u2212 10)) \u2212 1
-Cost = [0.02 / 0.98]^(365/20) \u2212 1
-Cost = (0.02041)^(18.25) \u2212 1
-Cost = (1.02041)^(18.25) \u2212 1
-Cost = 1.4459 \u2212 1
-Cost = <strong>0.4459 = 44.59% per annum</strong>
-
-<strong>(b) Decision</strong>
-Cost of trade credit: 44.59%
-Bank overdraft rate: 15%
-
-The firm should <strong>take the discount</strong> and borrow from the bank at 15% to pay early, because 15% is far cheaper than the implicit 44.59% cost of skipping the discount.
-
-<strong>Key insight:</strong> Trade credit discounts that seem small (just 2%!) can be extremely expensive when annualised. Always compare the annualised cost to available borrowing rates.`},
-
-{q:"Annual demand for a component is 10,000 units. Each order costs \u00a350 to process. The holding cost is \u00a32 per unit per year. Calculate the EOQ and the total number of orders per year.",
-sol:`<strong>EOQ Formula:</strong> EOQ = \u221a(2 \u00d7 D \u00d7 S / H)
-
-Where:
-D = Annual demand = 10,000 units
-S = Ordering cost = \u00a350 per order
-H = Holding cost = \u00a32 per unit per year
-
-EOQ = \u221a(2 \u00d7 10,000 \u00d7 50 / 2)
-EOQ = \u221a(1,000,000 / 2)
-EOQ = \u221a500,000
-EOQ = <strong>707 units per order</strong>
-
-<strong>Number of orders per year:</strong>
-Orders = D / EOQ = 10,000 / 707 = <strong>14.1 orders per year</strong> (approximately 14 orders)
-
-<strong>Total annual cost at EOQ:</strong>
-Total ordering cost = (10,000/707) \u00d7 \u00a350 = \u00a3707
-Total holding cost = (707/2) \u00d7 \u00a32 = \u00a3707
-Total = \u00a31,414
-
-<strong>Key insight:</strong> At the EOQ, ordering costs exactly equal holding costs \u2014 this is always the case at the optimal point. If you find they're not equal, recheck your calculation.`}
-]},
-
-{cat:"Perpetuity & Share Valuation",icon:"\ud83c\udfdb\ufe0f",color:"#7d3c98",questions:[
-{q:"A company just paid a dividend of \u00a32.40 per share. Dividends are expected to grow at 5% per year indefinitely. If the required return on equity is 12%, what is the share price today?",
-sol:`<strong>Gordon Growth Model:</strong> P\u2080 = d\u2081 / (r \u2212 g)
-
-<strong>Step 1: Calculate next year's dividend</strong>
-d\u2081 = d\u2080 \u00d7 (1 + g)
-d\u2081 = \u00a32.40 \u00d7 (1 + 0.05)
-d\u2081 = \u00a32.40 \u00d7 1.05 = <strong>\u00a32.52</strong>
-
-<strong>Step 2: Apply the growing perpetuity formula</strong>
-P\u2080 = \u00a32.52 / (0.12 \u2212 0.05)
-P\u2080 = \u00a32.52 / 0.07
-P\u2080 = <strong>\u00a336.00</strong>
-
-<strong>Common mistake:</strong> Using d\u2080 (\u00a32.40) instead of d\u2081 (\u00a32.52). The formula requires NEXT year's dividend because the first payment is one period away.
-
-<strong>What if growth = 0?</strong>
-P\u2080 = \u00a32.40 / 0.12 = \u00a320.00. Growth adds \u00a316 of value \u2014 more than 44% of the share price comes from expected future growth.`},
-
-{q:"MM argue that dividend policy is irrelevant. Prove this numerically given: Earnings = \u00a31 per share, ROE = Ke = 10%.\n\nScenario 1: 100% payout\nScenario 2: 40% payout",
-sol:`<strong>Scenario 1: 100% payout (no retention)</strong>
-Dividend = \u00a31.00
-Growth = 0 (nothing retained to reinvest)
-P\u2080 = Div / Ke = \u00a31.00 / 0.10 = <strong>\u00a310.00</strong>
-
-<strong>Scenario 2: 40% payout (60% retained)</strong>
-Dividend = \u00a31.00 \u00d7 0.40 = \u00a30.40
-Retention ratio = 0.60
-Growth = Retention \u00d7 ROE = 0.60 \u00d7 10% = 6%
-P\u2080 = D\u2081 / (Ke \u2212 g) = \u00a30.40 / (0.10 \u2212 0.06) = \u00a30.40 / 0.04 = <strong>\u00a310.00</strong>
-
-<strong>Same price! \u00a310.00 in both cases.</strong>
-
-<strong>Why?</strong> When ROE = Ke, every pound retained earns exactly the required return. The growth in future dividends perfectly compensates for the lower current dividend. The firm is neither creating nor destroying value by retaining earnings.
-
-<strong>When does this break down?</strong>
-\u2022 If ROE > Ke: retention creates value \u2192 lower payout = higher price
-\u2022 If ROE < Ke: retention destroys value \u2192 higher payout = higher price
-\u2022 In the real world: taxes, transaction costs, and signalling effects make dividend policy relevant`}
-]}
-];
-
-// Add practice tab and view
-function addPracticeTab(){
-  const ns = document.querySelector('.nav-scroll');
-  const btn = document.createElement('button');
-  btn.className = 'nav-tab';
-  btn.onclick = function(){showView('practice')};
-  btn.textContent = 'Practice';
-  ns.appendChild(btn);
-
-  const cont = document.querySelector('.container');
-  const div = document.createElement('div');
-  div.id = 'v-practice';
-  div.hidden = true;
-  cont.appendChild(div);
-}
-
-// Patch showView to handle practice
-const _origShow = showView;
-showView = function(n, lid){
-  if(n === 'practice'){
-    document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.nav-tab')[5].classList.add('active');
-    ['overview','lecture','formulas','sectionA','sectionB','checklist','practice'].forEach(v=>{
-      const el=document.getElementById('v-'+v);
-      if(el) el.hidden=(v!==n);
-    });
-    rP();
-    window.scrollTo({top:0,behavior:'smooth'});
-    return;
+// ══════════ RENDERERS ══════════
+function render(){
+  const m=document.getElementById('main');
+  switch(V){
+    case 'ov': m.innerHTML=rOV(); break;
+    case 'lec': m.innerHTML=rLEC(); break;
+    case 'fm': m.innerHTML=rFM(); break;
+    case 'sa': m.innerHTML=rSA(); break;
+    case 'sb': m.innerHTML=rSB(); break;
+    case 'pr': m.innerHTML=rPR(); break;
+    case 'cl': m.innerHTML=rCL(); break;
   }
-  const pe=document.getElementById('v-practice');
-  if(pe)pe.hidden=true;
-  _origShow(n,lid);
-};
-
-function rP(){
-  const el=document.getElementById('v-practice');
-  el.innerHTML=`<div class="hero"><h1>Practice Questions</h1><p>${PQ.reduce((a,c)=>a+c.questions.length,0)} exam-style questions with full worked solutions. Click any question to reveal the answer.</p></div>
-  <div class="tip info"><h4>\ud83c\udfaf How to use these</h4><ul>
-    <li>Try each question on paper BEFORE revealing the solution</li>
-    <li>Set up your working exactly as shown \u2014 this is how markers want to see it</li>
-    <li>If you get the right answer but by a different method, check both approaches</li>
-    <li>Pay attention to the <strong>Key insights</strong> and <strong>Common mistakes</strong> in each solution</li>
-  </ul></div>
-  ${PQ.map((cat,ci)=>`
-    <h2 class="sec-title" style="color:${cat.color}">${cat.icon} ${cat.cat}</h2>
-    ${cat.questions.map((q,qi)=>{
-      const qid='pq-'+ci+'-'+qi;
-      return `<div class="essay" id="${qid}" style="margin-bottom:14px">
-        <div class="essay-head" onclick="document.getElementById('${qid}').classList.toggle('open')">
-          <div class="essay-dot" style="background:${cat.color}"></div>
-          <div class="essay-title" style="font-size:13px;font-weight:400;white-space:pre-line">${q.q}</div>
-          <div class="essay-chevron">\u25bc</div>
-        </div>
-        <div class="essay-body">
-          <div class="context" style="margin-top:8px"><p style="white-space:pre-line;font-family:'JetBrains Mono','DM Sans',monospace;font-size:12.5px;line-height:1.8">${q.sol}</p></div>
-        </div>
-      </div>`;
-    }).join('')}
-  `).join('')}`;
 }
 
-addPracticeTab();
+function rOV(){
+  return `<div class="hero"><h1>C31FC Finance</h1><p>Complete exam revision &middot; 10 lectures &middot; calculations &middot; essays &middot; practice</p></div>
+  <div class="grid">${L.map(l=>`<div class="card" onclick="go('lec',${l.id})"><div class="card-bar" style="background:${l.co}"></div><div style="display:flex;gap:12px;align-items:center;margin-bottom:6px"><div class="card-ico">${l.i}</div><div><div class="card-lbl">Lecture ${l.id} &middot; ${l.ch}</div><div class="card-ttl">${l.t}</div></div></div><div class="card-desc">${l.kp.slice(0,2).join(' &middot; ')}</div></div>`).join('')}</div>`;
+}
+
+function mkExp(h,col,body,open){
+  return `<div class="exp${open?' open':''}" onclick="toggle(this)"><div class="exp-h"><h4 style="color:${col}">${h}</h4><span class="arr">\u25bc</span></div><div class="exp-b">${body}</div></div>`;
+}
+
+function mkPQ(q,a,col){
+  return `<div class="pq" onclick="toggle(this)"><div class="pq-h"><div class="dot" style="background:${col}"></div><div class="qt">${q}</div><span class="arr">\u25bc</span></div><div class="pq-b"><div class="pq-sol">${a}</div></div></div>`;
+}
+
+function rLEC(){
+  const l=L.find(x=>x.id===LI); if(!l)return '';
+  return `<button class="back" onclick="go('ov')">\u2190 Back</button>
+  <div class="banner" style="background:linear-gradient(135deg,${l.co},${l.co}99)"><div class="tg">LECTURE ${l.id} &middot; ${l.ch.toUpperCase()}</div><h1>${l.i} ${l.t}</h1></div>
+  <h2 class="sec">\ud83d\udccc Key Concepts</h2>
+  <ul class="kp">${l.kp.map(p=>`<li style="border-color:${l.co}">${p}</li>`).join('')}</ul>
+  <h2 class="sec">\ud83d\udcd0 Formulas</h2>
+  <div class="fgrid">${l.fm.map(f=>`<div class="fc"><div class="fc-n">${f.n}</div><div class="fc-eq">${f.eq}</div>${f.c?`<div class="fc-c">${f.c}</div>`:''}</div>`).join('')}</div>
+  <h2 class="sec">\ud83d\udd0d Deep Dive</h2>
+  <div class="ctx">${l.dd}</div>
+  <h2 class="sec">\ud83e\udde0 Ways of Thinking &mdash; click to expand</h2>
+  ${l.tf.map(t=>mkExp(t.h,l.co,`<p>${t.b}</p>`,false)).join('')}
+  <h2 class="sec">\ud83d\udcdd Practice Questions &mdash; click to reveal</h2>
+  ${l.pq.map(p=>mkPQ(p.q,p.a,l.co)).join('')}`;
+}
+
+function rFM(){
+  const all=L.flatMap(l=>l.fm.map(f=>({...f,lid:l.id,ch:l.ch,co:l.co})));
+  const fil=FF==='all'?all:all.filter(f=>f.lid===parseInt(FF));
+  return `<div class="hero"><h1>Formula Sheet</h1><p>Every formula with chapter context &mdash; click any card to jump to lecture</p></div>
+  <div class="fw-f"><button class="fw-b ${FF==='all'?'on':''}" onclick="FF='all';render()">All (${all.length})</button>
+  ${L.map(l=>`<button class="fw-b ${FF==String(l.id)?'on':''}" onclick="FF='${l.id}';render()">${l.i} L${l.id}</button>`).join('')}</div>
+  <div class="fgrid">${fil.map(f=>`<div class="fc" style="cursor:pointer" onclick="go('lec',${f.lid})"><div style="font-size:10px;color:#555;font-family:monospace;margin-bottom:2px">L${f.lid} &middot; ${f.ch}</div><div class="fc-c" style="margin:0 0 4px">${f.c||''}</div><div class="fc-n">${f.n}</div><div class="fc-eq" style="color:${f.co}">${f.eq}</div></div>`).join('')}</div>`;
+}
+
+function rSA(){
+  const pc={Core:'b-c',Medium:'b-m',Easy:'b-e'};
+  return `<div class="hero"><h1>Section A &mdash; Calculations</h1><p>3 questions, answer ALL. Show workings. State decision rules.</p></div>
+  ${mkExp('\ud83c\udfaf General Exam Tips &mdash; click for details','#f87171',`<ul><li><strong>Table layout:</strong> Year | CF | DF | PV. This is how markers expect NPV, IRR, and bond pricing.</li><li><strong>Decision rules:</strong> "Since NPV &gt; 0, accept" or "Since IRR &gt; k, accept"</li><li><strong>Partial marks:</strong> Correct formulas + steps earn marks even if final answer is wrong.</li><li><strong>Sanity checks:</strong> Coupon &gt; YTM = premium. \u03b2 &gt; 1 = return &gt; market. CCC positive = need financing.</li><li><strong>Rounding:</strong> 4+ decimals throughout, round only final answer.</li><li><strong>Units:</strong> State whether \u00a3, %, or decimal. Don\u2019t mix.</li></ul>`,true)}
+  ${mkExp('\ud83d\udd22 What numbers to look for in each question type','#f59e0b',`<ul><li><strong>NPV:</strong> Initial investment (negative at yr 0), discount rate, timing+amount of CFs.</li><li><strong>IRR:</strong> Two NPVs with opposite signs + two rates.</li><li><strong>Bonds:</strong> Face value, coupon RATE (\u00d7FV for \u00a3), YTM, maturity. Semi-annual?</li><li><strong>CAPM:</strong> Rf, Rm, \u03b2. Sometimes calc \u03b2 from cov/var data.</li><li><strong>WACC:</strong> Market values, YTM or interest (Kd), div+price (Kps,Kos), \u03b2, TAX RATE.</li><li><strong>Portfolio:</strong> Weights, individual \u03c3s, correlation \u03c1.</li><li><strong>CCC:</strong> Inventory, Receivables, Payables (B/S). Revenue, COGS (P&L).</li><li><strong>EOQ:</strong> Annual demand D, order cost S, holding cost H.</li></ul>`,false)}
+  <h2 class="sec">Likely Topics</h2>
+  <table class="tbl"><thead><tr><th>Topic</th><th>Lec</th><th>Priority</th><th>What to do</th></tr></thead><tbody>
+  ${SA.map(t=>`<tr><td style="font-weight:600;color:#e0e0e0">${t.t}</td><td>${t.l.map(x=>`<span style="color:#60a5fa;cursor:pointer" onclick="go('lec',${x})">L${x}</span>`).join(', ')}</td><td><span class="bdg ${pc[t.p]}">${t.p}</span></td><td style="color:#bbb">${t.d}</td></tr>`).join('')}
+  </tbody></table>`;
+}
+
+function rSB(){
+  return `<div class="hero"><h1>Section B &mdash; Essays</h1><p>3 questions, choose 2. Click topics to expand key arguments.</p></div>
+  ${mkExp('\u270d\ufe0f Essay Structure &mdash; click for framework','#a78bfa',`<ul><li><strong>Intro:</strong> Define terms, state direction. "This essay will critically evaluate..."</li><li><strong>Body:</strong> Theory \u2192 evidence \u2192 evaluation. Named references.</li><li><strong>Conclusion:</strong> Balanced, acknowledge counter-arguments.</li><li>Refs: Fama & French (1992), Lintner (1956), MM (1958/63), Gordon (1959), Markowitz (1952)</li></ul>`,true)}
+  <h2 class="sec">Possible Topics &mdash; click to expand</h2>
+  ${SB.map(t=>mkExp(`${t.t} (${t.l.map(x=>'L'+x).join(', ')})`,t.co,`<ul>${t.a.map(a=>`<li>${a}</li>`).join('')}</ul>`,false)).join('')}`;
+}
+
+function rPR(){
+  return `<div class="hero"><h1>Practice Questions</h1><p>${L.reduce((a,l)=>a+l.pq.length,0)} exam-style questions with worked solutions. Try on paper first!</p></div>
+  ${mkExp('\ud83c\udfaf How to use these','#34d399',`<ul><li>Attempt on paper BEFORE revealing</li><li>Set up working as shown \u2014 marker-friendly format</li><li>Note \u201cWhat to look for\u201d and \u201cKey insight\u201d sections</li></ul>`,true)}
+  ${L.map(l=>`<h2 class="sec" style="color:${l.co}">${l.i} L${l.id}: ${l.t}</h2>${l.pq.map(p=>mkPQ(p.q,p.a,l.co)).join('')}`).join('')}`;
+}
+
+function rCL(){
+  const tot=CK.reduce((a,c)=>a+c.i.length,0);
+  const dn=Object.values(CKS).filter(Boolean).length;
+  const pct=tot?Math.round(dn/tot*100):0;
+  return `<div class="hero"><h1>Progress Checklist</h1><p>${dn}/${tot} complete</p></div>
+  <div class="prog"><div class="prog-f" style="width:${pct}%"></div></div>
+  ${CK.map((c,ci)=>`<h2 class="sec">${c.c}</h2>${c.i.map((it,ii)=>{const k=ci+'-'+ii,d=CKS[k];return `<div class="cl" onclick="toggleCk('${k}')"><div class="cl-b${d?' dn':''}">${d?'\u2713':''}</div><span class="cl-t${d?' dn':''}">${it}</span></div>`}).join('')}`).join('')}`;
+}
+
+render();
 </script></body></html>

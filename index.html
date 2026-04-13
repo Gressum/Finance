@@ -270,10 +270,114 @@ function rFM(){
 
 function rSA(){
   const pc={Core:'b-c',Medium:'b-m',Easy:'b-e'};
-  return `<div class="hero"><h1>Section A &mdash; Calculations</h1><p>3 questions, answer ALL. Show workings. State decision rules.</p></div>
-  ${mkExp('\ud83c\udfaf General Exam Tips &mdash; click for details','#f87171',`<ul><li><strong>Table layout:</strong> Year | CF | DF | PV. This is how markers expect NPV, IRR, and bond pricing.</li><li><strong>Decision rules:</strong> "Since NPV &gt; 0, accept" or "Since IRR &gt; k, accept"</li><li><strong>Partial marks:</strong> Correct formulas + steps earn marks even if final answer is wrong.</li><li><strong>Sanity checks:</strong> Coupon &gt; YTM = premium. \u03b2 &gt; 1 = return &gt; market. CCC positive = need financing.</li><li><strong>Rounding:</strong> 4+ decimals throughout, round only final answer.</li><li><strong>Units:</strong> State whether \u00a3, %, or decimal. Don\u2019t mix.</li></ul>`,true)}
-  ${mkExp('\ud83d\udd22 What numbers to look for in each question type','#f59e0b',`<ul><li><strong>NPV:</strong> Initial investment (negative at yr 0), discount rate, timing+amount of CFs.</li><li><strong>IRR:</strong> Two NPVs with opposite signs + two rates.</li><li><strong>Bonds:</strong> Face value, coupon RATE (\u00d7FV for \u00a3), YTM, maturity. Semi-annual?</li><li><strong>CAPM:</strong> Rf, Rm, \u03b2. Sometimes calc \u03b2 from cov/var data.</li><li><strong>WACC:</strong> Market values, YTM or interest (Kd), div+price (Kps,Kos), \u03b2, TAX RATE.</li><li><strong>Portfolio:</strong> Weights, individual \u03c3s, correlation \u03c1.</li><li><strong>CCC:</strong> Inventory, Receivables, Payables (B/S). Revenue, COGS (P&L).</li><li><strong>EOQ:</strong> Annual demand D, order cost S, holding cost H.</li></ul>`,false)}
-  <h2 class="sec">Likely Topics</h2>
+  return `<div class="hero"><h1>Section A &mdash; Calculations</h1><p>3 questions, answer ALL. Show every step of your working. Always state the decision rule at the end.</p></div>
+
+  ${mkExp('\ud83c\udfaf How to lay out your answer on paper','#f87171',`
+<p style="margin-bottom:12px">For most Section A questions (NPV, IRR, bond pricing), the marker expects you to <strong>draw a table</strong>. Here is what each column means:</p>
+<table class="tbl" style="margin:8px 0 16px">
+<thead><tr><th>Column</th><th>What it stands for</th><th>What you write</th></tr></thead>
+<tbody>
+<tr><td><strong>Year</strong></td><td>The time period (0, 1, 2, 3...)</td><td>Year 0 = today (when investment is made). Year 1 = end of first year, etc.</td></tr>
+<tr><td><strong>CF</strong></td><td>Cash Flow &mdash; the actual money coming in or going out</td><td>Year 0 is usually negative (the investment cost). Years 1+ are positive (revenues/returns).</td></tr>
+<tr><td><strong>DF</strong></td><td>Discount Factor &mdash; the multiplier that converts a future CF to today&rsquo;s value</td><td>Calculate as 1/(1+r)^n. E.g. at 10%, Year 2: 1/(1.10)&sup2; = 1/1.21 = 0.8264</td></tr>
+<tr><td><strong>PV</strong></td><td>Present Value &mdash; what that future CF is worth right now</td><td>Simply CF &times; DF. E.g. &pound;70,000 &times; 0.8264 = &pound;57,851</td></tr>
+</tbody></table>
+<p style="margin-bottom:8px"><strong>Example layout for a 3-year NPV question at 10%:</strong></p>
+<div class="pq-sol" style="font-size:12px;margin:0 0 12px">Year | Cash Flow  | DF = 1/(1.10)^n | PV = CF &times; DF
+-----|-----------|----------------|-------------
+  0  | -&pound;100,000 | 1.0000          | -&pound;100,000
+  1  |  &pound;40,000  | 0.9091          |  &pound;36,364
+  2  |  &pound;50,000  | 0.8264          |  &pound;41,322
+  3  |  &pound;60,000  | 0.7513          |  &pound;45,079
+-----|-----------|----------------|-------------
+                          NPV =  | +&pound;22,765
+
+Decision: Since NPV > 0, the project should be ACCEPTED.</div>
+<p>This is the gold-standard format. Even if your final number is slightly off, showing this table earns you most of the marks.</p>`,true)}
+
+  ${mkExp('\ud83d\udcdd Decision rules &mdash; what to write at the end','#a78bfa',`
+<p style="margin-bottom:10px">Every calculation question expects you to state a <strong>decision rule</strong> at the end. Here are the exact phrases to use:</p>
+<table class="tbl" style="margin:8px 0">
+<thead><tr><th>Method</th><th>What to write</th></tr></thead>
+<tbody>
+<tr><td><strong>NPV</strong></td><td>&ldquo;Since NPV > 0 (&pound;22,765), the project should be <strong>accepted</strong> as it creates value above the required return.&rdquo;</td></tr>
+<tr><td><strong>IRR</strong></td><td>&ldquo;Since IRR (17.3%) > cost of capital (15%), the project should be <strong>accepted</strong>.&rdquo;<br>k = the cost of capital = the minimum return investors demand.</td></tr>
+<tr><td><strong>Bond pricing</strong></td><td>&ldquo;The bond trades at a <strong>discount</strong> (&pound;920 < &pound;1,000 face value) because the coupon rate (6%) is below the YTM (8%).&rdquo;</td></tr>
+<tr><td><strong>CAPM</strong></td><td>&ldquo;The expected return is 14.2%. Since the stock currently yields only 14%, it is <strong>overvalued</strong> (below the SML).&rdquo;</td></tr>
+<tr><td><strong>WACC</strong></td><td>&ldquo;The WACC is 10.5%. The firm should only accept projects with IRR &ge; 10.5% (or NPV &ge; 0 at this rate).&rdquo;</td></tr>
+</tbody></table>`,false)}
+
+  ${mkExp('\u2705 Sanity checks &mdash; how to verify your answer makes sense','#34d399',`
+<p style="margin-bottom:10px">Before you move on, run these quick checks. If your answer violates any of these, you have an error:</p>
+<table class="tbl" style="margin:8px 0">
+<thead><tr><th>What you calculated</th><th>Sanity check</th></tr></thead>
+<tbody>
+<tr><td><strong>Bond price</strong></td><td>If coupon rate > YTM (Yield to Maturity = the market interest rate), the price MUST be above face value (premium). If coupon < YTM, price must be below (discount). If coupon = YTM, price = face value exactly (par).</td></tr>
+<tr><td><strong>CAPM expected return</strong></td><td>If &beta; (beta = how volatile the stock is relative to the market) > 1, the expected return must be HIGHER than the market return. If &beta; < 1, it must be lower. If &beta; = 1, it equals the market return.</td></tr>
+<tr><td><strong>NPV</strong></td><td>NPV should be positive for a &ldquo;good&rdquo; project. If you get a very large negative number, double-check your discount factors.</td></tr>
+<tr><td><strong>CCC</strong></td><td>CCC (Cash Conversion Cycle = how many days between paying your suppliers and getting paid by customers) is positive for most firms. A negative CCC means you collect from customers BEFORE paying suppliers (rare, but some retailers achieve this).</td></tr>
+<tr><td><strong>WACC</strong></td><td>WACC should typically be between 5&ndash;15% for most firms. If you get 0.5% or 50%, something is wrong. Also: WACC should be between the cost of debt (cheapest) and cost of equity (most expensive).</td></tr>
+<tr><td><strong>EOQ</strong></td><td>At the optimal order quantity, total ordering costs EXACTLY equal total holding costs. If they don&rsquo;t match, recheck.</td></tr>
+</tbody></table>`,false)}
+
+  ${mkExp('\ud83d\udd22 What numbers to look for in the exam question','#f59e0b',`
+<p style="margin-bottom:10px">Each question type requires specific numbers from the question text. Here is exactly what to look for and what each number means:</p>
+
+<p style="margin:16px 0 6px"><strong style="color:#60a5fa;font-size:14px">NPV / IRR questions</strong></p>
+<ul>
+<li><strong>Initial investment (I&lt;sub&gt;0&lt;/sub&gt;)</strong> &mdash; the upfront cost of the project, usually at Year 0. This is always a NEGATIVE cash flow.</li>
+<li><strong>Future cash flows</strong> &mdash; the money the project generates each year (revenues minus costs). These go in Years 1, 2, 3, etc.</li>
+<li><strong>Discount rate (r)</strong> &mdash; the cost of capital, also called the required return. Might be called &ldquo;cost of capital&rdquo;, &ldquo;required rate of return&rdquo;, or &ldquo;discount rate&rdquo;. For IRR, you also need a second rate to interpolate.</li>
+</ul>
+
+<p style="margin:16px 0 6px"><strong style="color:#60a5fa;font-size:14px">Bond pricing</strong></p>
+<ul>
+<li><strong>Face value (FV)</strong> &mdash; the amount printed on the bond, repaid at maturity. Usually &pound;1,000 (US) or &pound;100 (UK).</li>
+<li><strong>Coupon rate</strong> &mdash; the annual interest rate the bond pays, as a % of face value. Multiply: Coupon &pound; = Rate &times; Face Value. E.g. 6% &times; &pound;1,000 = &pound;60/year.</li>
+<li><strong>YTM (Yield to Maturity)</strong> &mdash; the current market interest rate for this type of bond. This is your DISCOUNT RATE for pricing.</li>
+<li><strong>Maturity</strong> &mdash; number of years until the bond expires and face value is repaid. Also check: is it annual or semi-annual payments?</li>
+</ul>
+
+<p style="margin:16px 0 6px"><strong style="color:#60a5fa;font-size:14px">CAPM / Beta</strong></p>
+<ul>
+<li><strong>Rf (Risk-free rate)</strong> &mdash; the return on a &ldquo;safe&rdquo; investment like government bonds. Usually 2&ndash;5%.</li>
+<li><strong>Rm (Market return)</strong> &mdash; the expected return on the overall stock market (e.g. FTSE 100). Usually 8&ndash;12%.</li>
+<li><strong>&beta; (Beta)</strong> &mdash; the stock&rsquo;s sensitivity to market movements. &beta;=1 means same risk as market. &beta;=1.5 means 50% more volatile. Sometimes you must calculate &beta; from covariance and variance data.</li>
+</ul>
+
+<p style="margin:16px 0 6px"><strong style="color:#60a5fa;font-size:14px">WACC</strong></p>
+<ul>
+<li><strong>Market values</strong> of debt, preference shares, and ordinary shares &mdash; NOT book values. These determine the weights.</li>
+<li><strong>Cost of debt (Kd)</strong> &mdash; usually the YTM on the firm&rsquo;s bonds, or the interest rate on its loans.</li>
+<li><strong>Tax rate (T)</strong> &mdash; critical because debt interest is tax-deductible. After-tax cost = Kd &times; (1&minus;T).</li>
+<li><strong>Dividend and share price</strong> for preference shares (Kps = Div/Price) and ordinary shares (DGM: Kos = D1/P0 + g).</li>
+<li><strong>Beta + market data</strong> if calculating Kos via CAPM instead of DGM.</li>
+</ul>
+
+<p style="margin:16px 0 6px"><strong style="color:#60a5fa;font-size:14px">Portfolio risk</strong></p>
+<ul>
+<li><strong>Weights (w)</strong> &mdash; what proportion of your money is in each asset. E.g. 50/50 means w1=0.5, w2=0.5.</li>
+<li><strong>&sigma; (Standard deviation)</strong> of each asset &mdash; this measures each asset&rsquo;s individual risk/volatility.</li>
+<li><strong>&rho; (Correlation)</strong> &mdash; how the two assets move together. Ranges from &minus;1 (opposite) to +1 (identical). If &rho;=0 or not given, the covariance term simplifies or drops out.</li>
+</ul>
+
+<p style="margin:16px 0 6px"><strong style="color:#60a5fa;font-size:14px">Working capital (CCC, EOQ)</strong></p>
+<ul>
+<li><strong>From the Balance Sheet:</strong> Inventory, Accounts Receivable (what customers owe you), Accounts Payable (what you owe suppliers).</li>
+<li><strong>From the Income Statement:</strong> Revenue (total sales) and COGS (Cost of Goods Sold = what the goods cost to make/buy).</li>
+<li><strong>For EOQ:</strong> D = annual demand (units sold per year), S = ordering cost (cost to place one order), H = holding cost (cost to store one unit for one year).</li>
+</ul>`,false)}
+
+  ${mkExp('\ud83d\udcb0 Common mistakes that lose marks','#f87171',`<ul>
+<li><strong>Forgetting tax on debt in WACC:</strong> The cost of debt MUST be after tax: Kd &times; (1&minus;T). Using the pre-tax rate is the #1 WACC error.</li>
+<li><strong>Using d0 instead of d1 in Gordon model:</strong> The formula P = d1/(r&minus;g) needs NEXT year&rsquo;s dividend. If given this year&rsquo;s, multiply by (1+g) first.</li>
+<li><strong>Book values instead of market values for WACC weights:</strong> Always use market values unless explicitly told otherwise.</li>
+<li><strong>Wrong sign on NPV cash flows:</strong> The initial investment should be NEGATIVE. Future revenues should be POSITIVE.</li>
+<li><strong>Confusing coupon rate with YTM:</strong> Coupon rate determines how much interest you receive. YTM is the market rate you discount at. They are NOT the same (unless the bond is at par).</li>
+<li><strong>Not showing the formula:</strong> Even if you can do it in your head, WRITE THE FORMULA. You get marks for it.</li>
+</ul>`,false)}
+
+  <h2 class="sec">Likely Calculation Topics</h2>
   <table class="tbl"><thead><tr><th>Topic</th><th>Lec</th><th>Priority</th><th>What to do</th></tr></thead><tbody>
   ${SA.map(t=>`<tr><td style="font-weight:600;color:#e0e0e0">${t.t}</td><td>${t.l.map(x=>`<span style="color:#60a5fa;cursor:pointer" onclick="go('lec',${x})">L${x}</span>`).join(', ')}</td><td><span class="bdg ${pc[t.p]}">${t.p}</span></td><td style="color:#bbb">${t.d}</td></tr>`).join('')}
   </tbody></table>`;
